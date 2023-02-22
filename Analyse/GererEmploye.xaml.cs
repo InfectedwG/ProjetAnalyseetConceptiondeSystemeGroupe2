@@ -23,5 +23,12 @@ namespace Analyse
         {
             InitializeComponent();
         }
+
+        private void BtnRetourG_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+        }
     }
 }

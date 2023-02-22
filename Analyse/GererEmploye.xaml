@@ -43,10 +43,10 @@
                Width="74" Height="26" 
                Grid.Row="1"
                Grid.RowSpan="2"/>
-        
-        
 
-        
+
+
+
 
         <Label Content="Heure Finale" 
                HorizontalAlignment="Center" 
@@ -233,7 +233,7 @@
                  Width="140" 
                  Height="24"/>
 
-        
+
 
 
 
@@ -246,7 +246,7 @@
                 VerticalAlignment="Center" 
                 Width="109" 
                 Height="31" />
-        
+
         <Button x:Name="BtnSupprimer" 
                 Grid.Column="3" 
                 Content="Supprimer" 
@@ -256,5 +256,12 @@
                 VerticalAlignment="Center" 
                 Width="109"
                 Height="31" />
+        <Button x:Name="BtnRetourG" 
+            Content="Retour" 
+            HorizontalAlignment="Left" 
+            Margin="10,7,0,0" 
+            VerticalAlignment="Top" 
+            Width="109" 
+            Height="31" Click="BtnRetourG_Click" />
     </Grid>
 </Window>
