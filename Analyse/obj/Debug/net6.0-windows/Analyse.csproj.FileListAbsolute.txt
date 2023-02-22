@@ -19,3 +19,13 @@ C:\Users\Mamadou\Documents\SolutionAnalyse\Analyse\obj\Debug\net6.0-windows\refi
 C:\Users\Mamadou\Documents\SolutionAnalyse\Analyse\obj\Debug\net6.0-windows\Analyse.pdb
 C:\Users\Mamadou\Documents\SolutionAnalyse\Analyse\obj\Debug\net6.0-windows\Analyse.genruntimeconfig.cache
 C:\Users\Mamadou\Documents\SolutionAnalyse\Analyse\obj\Debug\net6.0-windows\ref\Analyse.dll
+C:\Users\maxim\Desktop\Projet1.4\ProjetAnalyseetConceptiondeSystemeGroupe2\Analyse\obj\Debug\net6.0-windows\Analyse.csproj.AssemblyReference.cache
+C:\Users\maxim\Desktop\Projet1.4\ProjetAnalyseetConceptiondeSystemeGroupe2\Analyse\obj\Debug\net6.0-windows\GererEmploye.g.cs
+C:\Users\maxim\Desktop\Projet1.4\ProjetAnalyseetConceptiondeSystemeGroupe2\Analyse\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\maxim\Desktop\Projet1.4\ProjetAnalyseetConceptiondeSystemeGroupe2\Analyse\obj\Debug\net6.0-windows\Recherche.g.cs
+C:\Users\maxim\Desktop\Projet1.4\ProjetAnalyseetConceptiondeSystemeGroupe2\Analyse\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\maxim\Desktop\Projet1.4\ProjetAnalyseetConceptiondeSystemeGroupe2\Analyse\obj\Debug\net6.0-windows\Analyse_MarkupCompile.cache
+C:\Users\maxim\Desktop\Projet1.4\ProjetAnalyseetConceptiondeSystemeGroupe2\Analyse\obj\Debug\net6.0-windows\Analyse_MarkupCompile.lref
+C:\Users\maxim\Desktop\Projet1.4\ProjetAnalyseetConceptiondeSystemeGroupe2\Analyse\obj\Debug\net6.0-windows\Analyse.dll
+C:\Users\maxim\Desktop\Projet1.4\ProjetAnalyseetConceptiondeSystemeGroupe2\Analyse\obj\Debug\net6.0-windows\ref\Analyse.dll
+C:\Users\maxim\Desktop\Projet1.4\ProjetAnalyseetConceptiondeSystemeGroupe2\Analyse\obj\Debug\net6.0-windows\Analyse.pdb

@@ -23,7 +23,12 @@ namespace Analyse
         public MainWindow()
         {
             InitializeComponent();
+
+            GererEmploye gererEmploye = new GererEmploye();
+            gererEmploye.show();
         }
+
+        
 
  
     }
