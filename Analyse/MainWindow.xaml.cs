@@ -32,12 +32,16 @@ namespace Analyse
 
         private void GererEmploye_Click(object sender, RoutedEventArgs e)
         {
-
+            GererEmploye gererEmploye = new GererEmploye();
+            gererEmploye.Show();
+            this.Visibility = Visibility.Collapsed;
         }
 
         private void rechercheEmploye_Click(object sender, RoutedEventArgs e)
         {
-
+            Recherche recherche = new Recherche();
+            recherche.Show();
+            this.Visibility = Visibility.Collapsed;
         }
     }
 }

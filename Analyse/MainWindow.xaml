@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         <Button x:Name="GererEmploye" Content="Gerer employés" HorizontalAlignment="Left" Margin="261,38,0,0" VerticalAlignment="Top" Width="193" Height="57" FontFamily="Segoe UI Black" Grid.Row="1" Click="GererEmploye_Click"/>
         <Button x:Name="rechercheEmploye" Content="Recherche" HorizontalAlignment="Left" Margin="261,52,0,0" VerticalAlignment="Top" Width="193" Height="57" Grid.Row="2" FontFamily="Segoe UI Black" Click="rechercheEmploye_Click"/>
-        <TextBox HorizontalAlignment="Left" Margin="0,55,0,0" TextWrapping="Wrap" Text="Application de Recherche de disponibilités" VerticalAlignment="Top" Width="790" TextChanged="TextBox_TextChanged" FontFamily="Segoe UI Black" FontSize="16" FontWeight="Bold"/>
+        <TextBox HorizontalAlignment="Left" Margin="0,55,0,0" TextWrapping="Wrap" Text="Application de Recherche de disponibilités" VerticalAlignment="Top" Width="790"  FontFamily="Segoe UI Black" FontSize="16" FontWeight="Bold"/>
 
 
 
