@@ -85,7 +85,7 @@ namespace Analyse {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Analyse;component/recherche.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Analyse;V1.0.0.0;component/recherche.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Recherche.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
