@@ -23,13 +23,21 @@ namespace Analyse
         public MainWindow()
         {
             InitializeComponent();
-
-            GererEmploye gererEmploye = new GererEmploye();
-            gererEmploye.show();
         }
 
-        
+        private void TextBox_TextChanged()
+        {
 
- 
+        }
+
+        private void GererEmploye_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void rechercheEmploye_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
