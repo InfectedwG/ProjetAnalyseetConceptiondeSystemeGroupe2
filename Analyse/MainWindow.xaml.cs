@@ -32,8 +32,12 @@ namespace Analyse
 
         private void GererEmploye_Click(object sender, RoutedEventArgs e)
         {
-            GererEmploye gererEmploye = new GererEmploye();
-            gererEmploye.show();
+
+        }
+
+        private void rechercheEmploye_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
