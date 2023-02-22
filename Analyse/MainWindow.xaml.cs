@@ -25,6 +25,15 @@ namespace Analyse
             InitializeComponent();
         }
 
- 
+        private void TextBox_TextChanged()
+        {
+
+        }
+
+        private void GererEmploye_Click(object sender, RoutedEventArgs e)
+        {
+            GererEmploye gererEmploye = new GererEmploye();
+            gererEmploye.show();
+        }
     }
 }
