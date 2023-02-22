@@ -44,24 +44,12 @@
                Grid.Row="1"
                Grid.RowSpan="2"/>
         
-        <Label Content="Heure Debut : " 
-               HorizontalAlignment="Left" 
-               Margin="506,461,0,0" 
-               VerticalAlignment="Top" 
-               Width="86" Grid.Column="3" 
-               Height="26" Grid.Row="16"/>
+        
 
-        <Label Content="Jour" 
-               HorizontalAlignment="Left" 
-               Margin="10,0,0,0" 
-               VerticalAlignment="Center" 
-               Width="86" 
-               Grid.Column="0" 
-               Height="26" 
-               Grid.Row="2"/>
+        
 
         <Label Content="Heure Finale" 
-               HorizontalAlignment="Left" 
+               HorizontalAlignment="Center" 
                Margin="10,0,0,0" 
                VerticalAlignment="Center" 
                Width="86" 
@@ -70,7 +58,7 @@
                Grid.Row="2"/>
 
         <Label Content="Heure Debut" 
-               HorizontalAlignment="Left" 
+               HorizontalAlignment="Center" 
                Margin="10,0,0,0" 
                VerticalAlignment="Center" 
                Width="86" 
@@ -78,18 +66,35 @@
                Height="26" 
                Grid.Row="2"/>
 
-        
 
-        
+        <Label Content="Jour" 
+               HorizontalAlignment="Center" 
+               Margin="10,0,0,0" 
+               VerticalAlignment="Center" 
+               Width="86" 
+               Grid.Column="0" 
+               Height="26" 
+               Grid.Row="2"/>
+
 
         <TextBox x:Name="idnom" 
                  HorizontalAlignment="Left" 
                  Margin="55,0,0,0" 
-                 Grid.Row="1" 
+                 Grid.Row="1"
+                 Grid.Column="1"
                  TextWrapping="Wrap"  
                  VerticalAlignment="Center" 
                  Width="140" 
                  Height="24"/>
+
+        <Label Content="Lundi" 
+               HorizontalAlignment="Center" 
+               Margin="10,0,0,0" 
+               VerticalAlignment="Center" 
+               Width="86" 
+               Grid.Column="0" 
+               Height="26" 
+               Grid.Row="3"/>
 
         <TextBox x:Name="HDLundi" 
                  HorizontalAlignment="Left" 
@@ -101,6 +106,7 @@
                  Width="140" 
                  Height="24"/>
 
+
         <TextBox x:Name="HFLundi" 
                  HorizontalAlignment="Left" 
                  Margin="55,0,0,0" 
@@ -111,10 +117,19 @@
                  Width="140" 
                  Height="24"/>
 
+        <Label Content="Mardi" 
+               HorizontalAlignment="Center" 
+               Margin="10,0,0,0" 
+               VerticalAlignment="Center" 
+               Width="86" 
+               Grid.Column="0" 
+               Height="26" 
+               Grid.Row="4"/>
+
         <TextBox x:Name="HDMardi" 
                  HorizontalAlignment="Left" 
                  Margin="55,0,0,0" 
-                 Grid.Row="1"
+                 Grid.Row="4"
                  Grid.Column="1"
                  TextWrapping="Wrap"  
                  VerticalAlignment="Center" 
@@ -124,16 +139,27 @@
         <TextBox x:Name="HFMardi" 
                  HorizontalAlignment="Left" 
                  Margin="55,0,0,0" 
-                 Grid.Row="1" 
+                 Grid.Row="4" 
+                 Grid.Column="2"
                  TextWrapping="Wrap"  
                  VerticalAlignment="Center" 
                  Width="140" 
                  Height="24"/>
 
+        <Label Content="Mercredi" 
+               HorizontalAlignment="Center" 
+               Margin="10,0,0,0" 
+               VerticalAlignment="Center" 
+               Width="86" 
+               Grid.Column="0" 
+               Height="26" 
+               Grid.Row="5"/>
+
         <TextBox x:Name="HDMercredi" 
                  HorizontalAlignment="Left" 
                  Margin="55,0,0,0" 
-                 Grid.Row="1" 
+                 Grid.Row="5"
+                 Grid.Column="1"
                  TextWrapping="Wrap"  
                  VerticalAlignment="Center" 
                  Width="140" 
@@ -142,16 +168,27 @@
         <TextBox x:Name="HFMercredi" 
                  HorizontalAlignment="Left" 
                  Margin="55,0,0,0" 
-                 Grid.Row="1" 
+                 Grid.Row="5" 
+                 Grid.Column="2"
                  TextWrapping="Wrap"  
                  VerticalAlignment="Center" 
                  Width="140" 
                  Height="24"/>
 
+        <Label Content="Jeudi" 
+               HorizontalAlignment="Center" 
+               Margin="10,0,0,0" 
+               VerticalAlignment="Center" 
+               Width="86" 
+               Grid.Column="0" 
+               Height="26" 
+               Grid.Row="6"/>
+
         <TextBox x:Name="HDJeudi" 
                  HorizontalAlignment="Left" 
                  Margin="55,0,0,0" 
-                 Grid.Row="1" 
+                 Grid.Row="6"
+                 Grid.Column="1"
                  TextWrapping="Wrap"  
                  VerticalAlignment="Center" 
                  Width="140" 
@@ -160,16 +197,27 @@
         <TextBox x:Name="HFJeudi" 
                  HorizontalAlignment="Left" 
                  Margin="55,0,0,0" 
-                 Grid.Row="1" 
+                 Grid.Row="6"
+                 Grid.Column="2"
                  TextWrapping="Wrap"  
                  VerticalAlignment="Center" 
                  Width="140" 
                  Height="24"/>
 
+        <Label Content="Vendredi" 
+               HorizontalAlignment="Center" 
+               Margin="10,0,0,0" 
+               VerticalAlignment="Center" 
+               Width="86" 
+               Grid.Column="0" 
+               Height="26" 
+               Grid.Row="7"/>
+
         <TextBox x:Name="HDVendredi" 
                  HorizontalAlignment="Left" 
                  Margin="55,0,0,0" 
-                 Grid.Row="1" 
+                 Grid.Row="7"
+                 Grid.Column="1"
                  TextWrapping="Wrap"  
                  VerticalAlignment="Center" 
                  Width="140" 
@@ -178,7 +226,8 @@
         <TextBox x:Name="HFVendredi" 
                  HorizontalAlignment="Left" 
                  Margin="55,0,0,0" 
-                 Grid.Row="1" 
+                 Grid.Row="7"
+                 Grid.Column="2"
                  TextWrapping="Wrap"  
                  VerticalAlignment="Center" 
                  Width="140" 
