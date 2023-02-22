@@ -11,85 +11,11 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Label Content="Nom : " HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top" Width="74" Height="26" Grid.Row="1" Grid.RowSpan="2"/>
-        <Label Content="Heure Debut : " HorizontalAlignment="Left" Margin="506,461,0,0" VerticalAlignment="Top" Width="86" Grid.Column="3" Height="26" Grid.Row="16"/>
-        <Label Content="Heure Finale : " HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Width="86" Grid.Column="2" Height="26" Grid.Row="1"/>
-        <Label Content="PlateForme de Gestion de disponibilité" HorizontalAlignment="Left" Margin="28,0,0,0" VerticalAlignment="Center" Width="406" Height="26" Grid.ColumnSpan="3" FontFamily="Arial Black" FontWeight="Bold" Grid.Column="1" FontSize="10"/>
+        <Button x:Name="GererEmploye" Content="Gerer employés" HorizontalAlignment="Left" Margin="261,38,0,0" VerticalAlignment="Top" Width="193" Height="57" FontFamily="Segoe UI Black" Grid.Row="1" Click="GererEmploye_Click"/>
+        <Button x:Name="rechercheEmploye" Content="Recherche" HorizontalAlignment="Left" Margin="261,52,0,0" VerticalAlignment="Top" Width="193" Height="57" Grid.Row="2" FontFamily="Segoe UI Black" Click="rechercheEmploye_Click"/>
+        <TextBox HorizontalAlignment="Left" Margin="0,55,0,0" TextWrapping="Wrap" Text="Application de Recherche de disponibilités" VerticalAlignment="Top" Width="790" TextChanged="TextBox_TextChanged" FontFamily="Segoe UI Black" FontSize="16" FontWeight="Bold"/>
 
-        <TextBox x:Name="idnom" HorizontalAlignment="Left" Margin="55,0,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Center" Width="140" Height="24"/>
-        <Button x:Name="BtnAjouter" Grid.Column="1" Content="Ajouter" HorizontalAlignment="Left" Margin="71,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="109" Height="31" />
-        <Button x:Name="BtnSupprimer" Grid.Column="3" Content="Supprimer" HorizontalAlignment="Left" Margin="71,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="109" Height="31" />
-        <Label Content="Affichage des disponible" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="160" Height="26" FontFamily="Arial Black" FontWeight="Bold" Grid.Column="1" FontSize="10" Grid.Row="10" Margin="120,0,0,0" Grid.ColumnSpan="2"/>
-        <ComboBox HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Center" Width="258" Margin="122,0,0,0" Grid.ColumnSpan="2"/>
-        <ComboBox HorizontalAlignment="Left" Grid.Row="8" VerticalAlignment="Center" Width="120" Grid.Column="1" Margin="71,0,0,0" SelectedIndex="0">
-
-            <system1:String>La durée</system1:String>
-            <system1:String>15 MIN</system1:String>
-            <system1:String>45MIN</system1:String>
-            <system1:String>60MIN</system1:String>
-            <system1:String>1 HEURE</system1:String>
-        </ComboBox>
-        <Label Content="Recherche de disponible" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="400" Height="26" FontFamily="Arial Black" FontWeight="Bold" Grid.Column="1" FontSize="10" Grid.Row="5" Margin="120,1,0,0" Grid.RowSpan="2" Grid.ColumnSpan="3"/>
-        <Label Content="Nom : " HorizontalAlignment="Left" Margin="27,0,0,0" VerticalAlignment="Center" Width="73" Height="26" Grid.Row="6"/>
-        <Button x:Name="BtnRecherche" Grid.Column="3" Content="Recherche" HorizontalAlignment="Left" Margin="68,0,0,0" Grid.Row="6" VerticalAlignment="Center" Width="114" Height="26" />
-        <Button x:Name="BtnModifier" Grid.Column="3" Content="Ajouter" HorizontalAlignment="Left" Margin="71,0,0,0" Grid.Row="8" VerticalAlignment="Center" Width="109" Height="31"  />
-        <DataGrid Grid.Row="11" Grid.ColumnSpan="4" Margin="10,25,10,25" Grid.RowSpan="3" >
-            <DataGrid.Columns>
-                <DataGridTextColumn  Header="Nom" Binding="{Binding Nom}" Width="*" />
-                <DataGridTextColumn Header="HeureRencontre" Binding="{Binding HeureRencontre}" Width="*"/>
-                <DataGridTextColumn Header="Jour" Binding="{Binding Jour}"  Width="*" />
-                <DataGridTextColumn Header="Durée" Binding="{Binding Duree}"  Width="*" />
-
-            </DataGrid.Columns>
-        </DataGrid>
-        <TextBox HorizontalAlignment="Left" Margin="93,0,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Center" Width="97" Grid.Column="1" Height="24"/>
-        <Label Content="Jour : " HorizontalAlignment="Left" Margin="10,23,0,0" VerticalAlignment="Top" Width="80" Grid.Column="3" Height="26" Grid.RowSpan="2"/>
-        <ComboBox HorizontalAlignment="Left" Grid.Row="8" VerticalAlignment="Center" Width="120" Margin="47,0,0,0" SelectedIndex="0">
-
-            <system1:String>Les jours</system1:String>
-            <system1:String>Lundi</system1:String>
-            <system1:String>Mardi</system1:String>
-            <system1:String>Mercredi</system1:String>
-            <system1:String>Jeudi</system1:String>
-            <system1:String>Vendredi</system1:String>
-        </ComboBox>
-        <Label Content="Jour :" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Width="47" Height="26" Grid.Row="8" RenderTransformOrigin="0.763,0.412"/>
-        <Label Content="Durée:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Width="47" Height="26" Grid.Row="8" RenderTransformOrigin="0.763,0.412" Grid.Column="1"/>
-        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="60,25,0,0" SelectedIndex="0" Grid.Column="3" Grid.RowSpan="2">
-
-            <system1:String>Les jours</system1:String>
-            <system1:String>Lundi</system1:String>
-            <system1:String>Mardi</system1:String>
-            <system1:String>Mercredi</system1:String>
-            <system1:String>Jeudi</system1:String>
-            <system1:String>Vendredi</system1:String>
-        </ComboBox>
-        <Label Content="Heure Debut : " HorizontalAlignment="Left" Margin="2,0,0,0" VerticalAlignment="Center" Width="86" Grid.Column="1" Height="26" Grid.Row="1"/>
-        <Label Content="Nom : " HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Width="73" Height="26" Grid.Row="7" Grid.Column="2" Grid.RowSpan="2"/>
-        <TextBox x:Name="idnom_Copy" HorizontalAlignment="Left" Margin="50,0,0,0" Grid.Row="8" TextWrapping="Wrap"  VerticalAlignment="Center" Width="140" Height="24" Grid.Column="2"/>
-        <Button x:Name="BtnModifier_Copy" Grid.Column="3" Content="Rechercher" HorizontalAlignment="Left" Margin="71,0,0,0" Grid.Row="9" VerticalAlignment="Center" Width="109" Height="31"  />
-        <TextBox HorizontalAlignment="Left" Margin="96,0,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Center" Width="97" Grid.Column="2" Height="24"/>
 
 
     </Grid>
