@@ -33,7 +33,7 @@ namespace Analyse
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
         }
-
+        /*
         private void BtnAjouter_Click(object sender, RoutedEventArgs e)
         {
             string nom = idnom.Text;
@@ -47,7 +47,7 @@ namespace Analyse
             string HFJeudi = this.HFJeudi.Text;
             string HDVendredi = this.HDVendredi.Text;
             string HFVendredi = this.HFVendredi.Text;
-
+            
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -75,7 +75,8 @@ namespace Analyse
             }
 
         }
-
+        */
+        /*
         private void BtnSupprimer_Click(object sender, RoutedEventArgs e)
         {
             string nom = idnom.Text;
@@ -103,5 +104,6 @@ namespace Analyse
                 }
             }
         }
+        */
     }
 }

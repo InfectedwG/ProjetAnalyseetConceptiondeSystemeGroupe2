@@ -22,6 +22,7 @@ C:\Users\maxim\Desktop\Projet1.4\ProjetAnalyseetConceptiondeSystemeGroupe2\Analy
 C:\Users\maxim\Desktop\Projet1.4\ProjetAnalyseetConceptiondeSystemeGroupe2\Analyse\obj\Debug\net6.0-windows\ref\Analyse.dll
 C:\Users\maxim\Desktop\Projet1.4\ProjetAnalyseetConceptiondeSystemeGroupe2\Analyse\obj\Debug\net6.0-windows\Analyse.pdb
 C:\Users\maxim\Desktop\Projet1.4\ProjetAnalyseetConceptiondeSystemeGroupe2\Analyse\obj\Debug\net6.0-windows\Analyse.genruntimeconfig.cache
+<<<<<<< HEAD
 C:\Users\Mamadou\Documents\GitHub\ProjetAnalyseetConceptiondeSystemeGroupe2\ProjetAnalyseetConceptiondeSystemeGroupe2\Analyse\bin\Debug\net6.0-windows\Analyse.exe
 C:\Users\Mamadou\Documents\GitHub\ProjetAnalyseetConceptiondeSystemeGroupe2\ProjetAnalyseetConceptiondeSystemeGroupe2\Analyse\bin\Debug\net6.0-windows\Analyse.deps.json
 C:\Users\Mamadou\Documents\GitHub\ProjetAnalyseetConceptiondeSystemeGroupe2\ProjetAnalyseetConceptiondeSystemeGroupe2\Analyse\bin\Debug\net6.0-windows\Analyse.runtimeconfig.json
@@ -47,3 +48,6 @@ C:\Users\Mamadou\Documents\GitHub\ProjetAnalyseetConceptiondeSystemeGroupe2\Proj
 C:\Users\Mamadou\Documents\GitHub\ProjetAnalyseetConceptiondeSystemeGroupe2\ProjetAnalyseetConceptiondeSystemeGroupe2\Analyse\obj\Debug\net6.0-windows\Analyse.pdb
 C:\Users\Mamadou\Documents\GitHub\ProjetAnalyseetConceptiondeSystemeGroupe2\ProjetAnalyseetConceptiondeSystemeGroupe2\Analyse\obj\Debug\net6.0-windows\Analyse.genruntimeconfig.cache
 C:\Users\Mamadou\Documents\GitHub\ProjetAnalyseetConceptiondeSystemeGroupe2\ProjetAnalyseetConceptiondeSystemeGroupe2\Analyse\obj\Debug\net6.0-windows\ref\Analyse.dll
+=======
+C:\Users\maxim\Desktop\Projet1.4\ProjetAnalyseetConceptiondeSystemeGroupe2\Analyse\obj\Debug\net6.0-windows\Analyse.csproj.AssemblyReference.cache
+>>>>>>> 6ff2b7d40dfe5dd752fe9c71098be88f9837eb5d
