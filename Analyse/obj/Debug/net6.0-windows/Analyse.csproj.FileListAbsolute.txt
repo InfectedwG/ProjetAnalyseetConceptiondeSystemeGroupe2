@@ -22,3 +22,4 @@ C:\Users\maxim\Desktop\Projet1.4\ProjetAnalyseetConceptiondeSystemeGroupe2\Analy
 C:\Users\maxim\Desktop\Projet1.4\ProjetAnalyseetConceptiondeSystemeGroupe2\Analyse\obj\Debug\net6.0-windows\ref\Analyse.dll
 C:\Users\maxim\Desktop\Projet1.4\ProjetAnalyseetConceptiondeSystemeGroupe2\Analyse\obj\Debug\net6.0-windows\Analyse.pdb
 C:\Users\maxim\Desktop\Projet1.4\ProjetAnalyseetConceptiondeSystemeGroupe2\Analyse\obj\Debug\net6.0-windows\Analyse.genruntimeconfig.cache
+C:\Users\maxim\Desktop\Projet1.4\ProjetAnalyseetConceptiondeSystemeGroupe2\Analyse\obj\Debug\net6.0-windows\Analyse.csproj.AssemblyReference.cache
