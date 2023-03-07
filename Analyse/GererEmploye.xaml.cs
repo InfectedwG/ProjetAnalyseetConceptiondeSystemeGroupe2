@@ -19,9 +19,11 @@ namespace Analyse
     /// </summary>
     public partial class GererEmploye : Window
     {
-        public GererEmploye()
+        public GererEmploye(MainWindow model)
         {
             InitializeComponent();
+
+            
         }
 
         private void BtnRetourG_Click(object sender, RoutedEventArgs e)

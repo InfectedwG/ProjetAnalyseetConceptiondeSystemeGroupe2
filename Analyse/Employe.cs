@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace Analyse
 {
     internal class Employe
     {
+        
         private string nom;
         private List<Disponibilite> disponibilites = new List<Disponibilite>();
 
@@ -33,13 +36,15 @@ namespace Analyse
 
         public void RechercherDispo(string jour, TimeSpan duree)
         {
+
+
             foreach(Disponibilite dispo in Disponibilites)
             {
                 if (dispo.ComparerDispo(jour, duree))
                 {
                     RetournerDispos(dispo);
                 }
-            }            
+            }
         }
     }
 }
