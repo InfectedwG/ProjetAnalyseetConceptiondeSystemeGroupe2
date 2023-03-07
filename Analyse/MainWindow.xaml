@@ -7,14 +7,19 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="GererEmploye" Content="Gerer employés" HorizontalAlignment="Left" Margin="261,38,0,0" VerticalAlignment="Top" Width="193" Height="57" FontFamily="Segoe UI Black" Grid.Row="1" Click="GererEmploye_Click"/>
-        <Button x:Name="rechercheEmploye" Content="Recherche" HorizontalAlignment="Left" Margin="261,52,0,0" VerticalAlignment="Top" Width="193" Height="57" Grid.Row="2" FontFamily="Segoe UI Black" Click="rechercheEmploye_Click"/>
-        <Label Content="Platforme de recherche" HorizontalAlignment="Left" Margin="339,55,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="14"/>
+        <Button x:Name="GererEmploye" Content="Gerer employés" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Center" Width="192" Height="57" FontFamily="Segoe UI Black" Grid.Row="1" Click="GererEmploye_Click" Grid.Column="1"/>
+        <Button x:Name="rechercheEmploye" Content="Recherche" HorizontalAlignment="Center" VerticalAlignment="Center" Width="193" Height="57" Grid.Row="2" FontFamily="Segoe UI Black" Click="rechercheEmploye_Click" Grid.Column="1"/>
+        <Label Content="Platforme de recherche" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe UI Black" FontSize="20" Grid.Column="1" Width="246" Height="65"/>
 
 
 

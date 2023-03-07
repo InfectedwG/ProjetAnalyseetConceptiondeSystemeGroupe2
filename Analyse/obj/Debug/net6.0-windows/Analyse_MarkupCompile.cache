@@ -4,16 +4,21 @@
 winexe
 C#
 .cs
-C:\Users\maxim\Desktop\Projet1.4\ProjetAnalyseetConceptiondeSystemeGroupe2\Analyse\obj\Debug\net6.0-windows\
+C:\Users\Mamadou\Documents\GitHub\ProjetAnalyseetConceptiondeSystemeGroupe2\ProjetAnalyseetConceptiondeSystemeGroupe2\Analyse\obj\Debug\net6.0-windows\
 Analyse
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\maxim\Desktop\Projet1.4\ProjetAnalyseetConceptiondeSystemeGroupe2\Analyse\App.xaml
+C:\Users\Mamadou\Documents\GitHub\ProjetAnalyseetConceptiondeSystemeGroupe2\ProjetAnalyseetConceptiondeSystemeGroupe2\Analyse\App.xaml
 3-1578407713
 
-8-573605364
-223-1946120769
+<<<<<<< HEAD
+5414384272
+194237474483
+=======
+8-296498174
+194-1138890827
+>>>>>>> 6ff2b7d40dfe5dd752fe9c71098be88f9837eb5d
 GererEmploye.xaml;MainWindow.xaml;Recherche.xaml;
 
 True

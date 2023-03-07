@@ -25,28 +25,25 @@
         </Grid.ColumnDefinitions>
 
         <Label Content="PlateForme de Gestion de disponibilité" 
-               HorizontalAlignment="Left" 
-               Margin="28,0,0,0" 
+               HorizontalAlignment="Center" 
+               Margin="171,0,0,0" 
                VerticalAlignment="Center" 
-               Width="406" 
+               Width="452" 
                Height="26" 
-               Grid.ColumnSpan="3" 
                FontFamily="Arial Black" 
                FontWeight="Bold" 
-               Grid.Column="1" 
-               FontSize="10"/>
+               FontSize="14" Grid.ColumnSpan="3"/>
 
         <Label Content="Nom : " 
-               HorizontalAlignment="Left" 
+               HorizontalAlignment="Center" 
                Margin="10,2,0,0" 
                VerticalAlignment="Top" 
-               Width="74" Height="26" 
-               Grid.Row="1"
-               Grid.RowSpan="2"/>
-        
-        
+               Width="157" Height="26" 
+               Grid.Row="1" FontSize="14" FontFamily="Segoe UI Black"/>
 
-        
+
+
+
 
         <Label Content="Heure Finale" 
                HorizontalAlignment="Center" 
@@ -55,7 +52,7 @@
                Width="86" 
                Grid.Column="2" 
                Height="26" 
-               Grid.Row="2"/>
+               Grid.Row="2" FontFamily="Segoe UI Black"/>
 
         <Label Content="Heure Debut" 
                HorizontalAlignment="Center" 
@@ -64,7 +61,7 @@
                Width="86" 
                Grid.Column="1" 
                Height="26" 
-               Grid.Row="2"/>
+               Grid.Row="2" FontFamily="Segoe UI Black"/>
 
 
         <Label Content="Jour" 
@@ -74,7 +71,7 @@
                Width="86" 
                Grid.Column="0" 
                Height="26" 
-               Grid.Row="2"/>
+               Grid.Row="2" FontFamily="Segoe UI Black"/>
 
 
         <TextBox x:Name="idnom" 
@@ -94,7 +91,7 @@
                Width="86" 
                Grid.Column="0" 
                Height="26" 
-               Grid.Row="3"/>
+               Grid.Row="3" FontFamily="Segoe UI Black"/>
 
         <TextBox x:Name="HDLundi" 
                  HorizontalAlignment="Left" 
@@ -124,7 +121,7 @@
                Width="86" 
                Grid.Column="0" 
                Height="26" 
-               Grid.Row="4"/>
+               Grid.Row="4" FontFamily="Segoe UI Black"/>
 
         <TextBox x:Name="HDMardi" 
                  HorizontalAlignment="Left" 
@@ -153,7 +150,7 @@
                Width="86" 
                Grid.Column="0" 
                Height="26" 
-               Grid.Row="5"/>
+               Grid.Row="5" FontFamily="Segoe UI Black"/>
 
         <TextBox x:Name="HDMercredi" 
                  HorizontalAlignment="Left" 
@@ -182,7 +179,7 @@
                Width="86" 
                Grid.Column="0" 
                Height="26" 
-               Grid.Row="6"/>
+               Grid.Row="6" FontFamily="Segoe UI Black"/>
 
         <TextBox x:Name="HDJeudi" 
                  HorizontalAlignment="Left" 
@@ -211,7 +208,7 @@
                Width="86" 
                Grid.Column="0" 
                Height="26" 
-               Grid.Row="7"/>
+               Grid.Row="7" FontFamily="Segoe UI Black"/>
 
         <TextBox x:Name="HDVendredi" 
                  HorizontalAlignment="Left" 
@@ -234,7 +231,7 @@
                  Height="24"/>
 
 
-        
+
 
 
         <Button x:Name="BtnAjouter" 
@@ -245,8 +242,8 @@
                 Grid.Row="8" 
                 VerticalAlignment="Center" 
                 Width="109" 
-                Height="31" />
-        
+                Height="31" Click="BtnAjouter_Click" />
+
         <Button x:Name="BtnSupprimer" 
                 Grid.Column="3" 
                 Content="Supprimer" 
@@ -255,6 +252,7 @@
                 Grid.Row="1" 
                 VerticalAlignment="Center" 
                 Width="109"
-                Height="31" />
+                Height="31" Click="BtnSupprimer_Click" />
+        <Button x:Name="BtnRetourG" Content="Retour" HorizontalAlignment="Left" Margin="10,4,0,0" VerticalAlignment="Top" Width="108" Height="31" Click="BtnRetour_Click"  />
     </Grid>
 </Window>
