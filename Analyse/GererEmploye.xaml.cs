@@ -21,10 +21,12 @@ namespace Analyse
     public partial class GererEmploye : Window
     {
         private string connectionString = "Data Source=SERVER_NAME;Initial Catalog=DATABASE_NAME;User ID=USER_ID;Password=PASSWORD;";
+        public MainWindow Model;
 
-        public GererEmploye()
+        public GererEmploye(MainWindow model)
         {
             InitializeComponent();
+            Model = model;
         }
 
         private void BtnRetour_Click(object sender, RoutedEventArgs e)

@@ -19,9 +19,13 @@ namespace Analyse
     /// </summary>
     public partial class Recherche : Window
     {
-        public Recherche()
+
+        public MainWindow Model;
+
+        public Recherche(MainWindow model)
         {
             InitializeComponent();
+            Model = model;
         }
 
         private void BtnRetour_Click(object sender, RoutedEventArgs e)
