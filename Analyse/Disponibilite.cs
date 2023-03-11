@@ -37,7 +37,7 @@ namespace Analyse
             Jour = jour;
         }
 
-        public bool ComparerDispo(String jour, TimeSpan dureeCheck)
+        public bool ComparerDispo(string jour, TimeSpan dureeCheck)
         {
             TimeSpan dureeDispo = this.HeureFin - this.HeureDebut;
 

@@ -196,17 +196,58 @@ namespace Analyse
             int reponse = deleteEmploye.ExecuteNonQuery();
             connexion.Close();
             if (reponse == 0) confirmation = false;
-            
-            Employes.Remove();
+
+            Employes = GetEmployesDB();
             return confirmation;
         }
 
-        public DataTable RechercheEmployeDB(List<string> listeNoms)
+        public string[,] RechercheEmploye(List<string> listeNoms, string jour, TimeSpan duree)
         {
+            List<string> resultatsNoms = new List<string>();
+            List<string> resultatsJours = new List<string>();
+            List<string> resultatsHeuresDebut = new List<string>();
+            List<string> resultatsHeuresFin = new List<string>();
 
-            string requete = "select e.nom, d.jour, d.heure_debut, d.heure_fin from Disponibilite d inner join Employe e on e.id = d.id_employe where e.nom = @nom";
-            SqlCommand rechercheEmploye = new SqlCommand(requete, connexion);
-            rechercheEmploye.Parameters.AddWithValue("@nom", listeNoms);
+
+            foreach (var nom in listeNoms)
+            {
+                foreach (var emp in Employes)
+                {
+                    if (emp.ComparerEmploye(nom))
+                    {
+                        resultatsNoms.Add(nom);
+                        emp.ComparerDispos(jour, duree, resultatsHeuresDebut, resultatsHeuresFin, resultatsJours);
+                    }
+                }
+            }
+
+            string[,] resultats = new string[resultatsJours.Count(), 4];
+
+
+            for (int i = 0; i < resultatsNoms.Count(); i++)
+            {
+                int j = 0;
+                resultats[i, j] = resultatsNoms.ElementAt(i);
+            }
+            for (int i = 0; i < resultatsJours.Count(); i++)
+            {
+                int j = 1;
+                resultats[i, j] = resultatsJours.ElementAt(i);
+            }
+            for (int i = 0; i < resultatsHeuresDebut.Count(); i++)
+            {
+                int j = 2;
+                resultats[i, j] = resultatsHeuresDebut.ElementAt(i);
+            }
+            for (int i = 0; i < resultatsHeuresFin.Count(); i++)
+            {
+                int j = 3;
+                resultats[i, j] = resultatsHeuresFin.ElementAt(i);
+            }
+
+            return resultats;
+
+
 
 
 

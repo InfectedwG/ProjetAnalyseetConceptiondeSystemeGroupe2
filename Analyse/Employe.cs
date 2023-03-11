@@ -48,19 +48,22 @@ namespace Analyse
             return dispo;
         }
 
-        public List<Disponibilite> RechercherDispo(string jour, TimeSpan duree)
+        public bool ComparerDispos(string jour, TimeSpan duree, List<string> listeHeuresDebut, List<string> listeHeuresFin, List<string> listeJours)
         {
-            List<Disponibilite> dispos = new List<Disponibilite>();
+            bool verification = false;
 
-            foreach(Disponibilite dispo in Disponibilites)
+            foreach(Disponibilite dispo in this.Disponibilites)
             {
                 if (dispo.ComparerDispo(jour, duree))
                 {
-                    dispos.Add(dispo);
+                    verification = true;
+                    listeJours.Add(dispo.Jour);
+                    listeHeuresDebut.Add(dispo.HeureDebut.ToString());
+                    listeHeuresFin.Add(dispo.HeureFin.ToString());
                 }
 
             }
-            return dispos;
+            return verification;
         }
 
         public string ToString()
