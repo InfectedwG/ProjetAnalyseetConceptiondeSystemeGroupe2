@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,11 @@ namespace Analyse
     /// </summary>
     public partial class MainWindow : Window
     {
+        private ArrayList<Employe> emp;
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
         private void TextBox_TextChanged()
@@ -32,7 +35,7 @@ namespace Analyse
 
         private void GererEmploye_Click(object sender, RoutedEventArgs e)
         {
-            GererEmploye gererEmploye = new GererEmploye();
+            GererEmploye gererEmploye = new GererEmploye(this);
             gererEmploye.Show();
             this.Visibility = Visibility.Collapsed;
         }

@@ -20,11 +20,13 @@ namespace Analyse
     /// </summary>
     public partial class GererEmploye : Window
     {
-        private string connectionString = "Data Source=SERVER_NAME;Initial Catalog=DATABASE_NAME;User ID=USER_ID;Password=PASSWORD;";
+       private string connectionString = "Data Source=SERVER_NAME;Initial Catalog=DATABASE_NAME;User ID=USER_ID;Password=PASSWORD;";
+        private MainWindow model;
 
-        public GererEmploye()
+        public GererEmploye(MainWindow model)
         {
             InitializeComponent();
+            this.model = model;
         }
 
         private void BtnRetour_Click(object sender, RoutedEventArgs e)
@@ -33,9 +35,10 @@ namespace Analyse
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
         }
-        /*
+        
         private void BtnAjouter_Click(object sender, RoutedEventArgs e)
         {
+            /*
             string nom = idnom.Text;
             string HDLundi = this.HDLundi.Text;
             string HFLundi = this.HFLundi.Text;
@@ -73,12 +76,13 @@ namespace Analyse
 
                 command.ExecuteNonQuery();
             }
-
+            */
         }
-        */
-        /*
+
+        
         private void BtnSupprimer_Click(object sender, RoutedEventArgs e)
         {
+            /*
             string nom = idnom.Text;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -103,7 +107,8 @@ namespace Analyse
                     MessageBox.Show("Aucun employé trouvé avec ce nom.");
                 }
             }
+            */
         }
-        */
+
     }
-}
+    }

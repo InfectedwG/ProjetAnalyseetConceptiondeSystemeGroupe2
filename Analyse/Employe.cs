@@ -16,7 +16,7 @@ namespace Analyse
             get { return nom; }
             set { nom = value; }
         }
-
+        
         public List<Disponibilite> Disponibilites
         {
             get { return disponibilites; }
