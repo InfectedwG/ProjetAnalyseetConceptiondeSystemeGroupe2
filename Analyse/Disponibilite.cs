@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Analyse
 {
-    internal class Disponibilite
+    public class Disponibilite
     {
         private TimeOnly heureDebut;
         private TimeOnly heureFin;
@@ -37,12 +37,17 @@ namespace Analyse
             Jour = jour;
         }
 
-        public bool ComparerDispo(String jour, TimeSpan check)
+        public bool ComparerDispo(string jour, TimeSpan dureeCheck)
         {
             TimeSpan dureeDispo = this.HeureFin - this.HeureDebut;
 
-            if (dureeDispo == check && this.Jour == jour)return true;
+            if (dureeDispo >= dureeCheck && this.Jour == jour) return true;
             else return false;
+        }
+
+        public string ToString()
+        {
+            return $"{this.Jour} : {this.HeureDebut} a {this.HeureFin}";
         }
     }
 }
