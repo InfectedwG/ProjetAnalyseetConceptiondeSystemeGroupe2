@@ -1,5 +1,5 @@
 # ProjetAnalyseetConceptiondeSystemeGroupe2
-Votre client veut une application permettant la planification automatique de l’horaire de plusieurs personnes 
+Notre client veut une application permettant la planification automatique de l’horaire de plusieurs personnes 
 afin de pouvoir mieux gérer la prise de rendez-vous. Ainsi, le programme devrait pouvoir permettre l’entrée 
 des disponibilités de plusieurs utilisateurs. Ces disponibilités devraient être enregistrées de façon à être persistantes
 (elles ne se perdent pas à la fermeture de l’application). 
