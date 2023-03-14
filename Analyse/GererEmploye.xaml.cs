@@ -39,6 +39,8 @@ namespace Analyse
         /// Cette méthode gère l'événement click du bouton "Retour".
         /// Elle ferme la fenêtre actuelle et ouvre la fenêtre principale.
         /// </summary>
+         ///<param name="sender">Objet qui a déclenché l'événement.</param>
+        /// <param name="e">Arguments de l'événement.</param>
         private void BtnRetour_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -50,6 +52,9 @@ namespace Analyse
         /// Cette méthode gère l'événement click du bouton "Ajouter".
         /// Elle insère les données d'un nouvel employé dans la table "VotreTable".
         /// </summary>
+        ///<param name="sender">Objet qui a déclenché l'événement.</param>
+        /// <param name="e">Arguments de l'événement.</param>
+
         private void BtnAjouter_Click(object sender, RoutedEventArgs e)
         {
             /*

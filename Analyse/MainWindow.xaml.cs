@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 namespace Analyse
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    ///  Ce constructeur initialise une nouvelle instance de la classe MainWindow.
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -28,11 +28,19 @@ namespace Analyse
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void TextBox_TextChanged()
         {
 
         }
 
+        /// <summary>
+        /// Cette méthode est appelée lorsque l'utilisateur clique sur le bouton "GererEmploye". Elle ouvre une nouvelle fenêtre "GererEmploye" et masque la fenêtre principale.
+        /// </summary>
+        ///<param name="sender">Objet qui a déclenché l'événement.</param>
+        /// <param name="e">Arguments de l'événement.</param>
         private void GererEmploye_Click(object sender, RoutedEventArgs e)
         {
             GererEmploye gererEmploye = new GererEmploye(this);
@@ -40,6 +48,11 @@ namespace Analyse
             this.Visibility = Visibility.Collapsed;
         }
 
+        /// <summary>
+        /// Cette méthode est appelée lorsque l'utilisateur clique sur le bouton "rechercheEmploye". Elle ouvre une nouvelle fenêtre "Recherche" et masque la fenêtre principale.
+        /// </summary>
+        ///<param name="sender">Objet qui a déclenché l'événement.</param>
+        /// <param name="e">Arguments de l'événement.</param>
         private void rechercheEmploye_Click(object sender, RoutedEventArgs e)
         {
             Recherche recherche = new Recherche();
