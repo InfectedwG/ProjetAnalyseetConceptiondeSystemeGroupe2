@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -23,19 +24,32 @@ namespace Analyse
        private string connectionString = "Data Source=SERVER_NAME;Initial Catalog=DATABASE_NAME;User ID=USER_ID;Password=PASSWORD;";
         private MainWindow model;
 
+        /// <summary> 
+        /// Initialise une nouvelle instance de la classe <see cref="GererEmploye"/> 
+        /// </summary> 
+        /// <param name="model"> L'objet de la fenêtre principale. </param> 
         public GererEmploye(MainWindow model)
         {
             InitializeComponent();
             this.model = model;
+           
         }
 
+        /// <summary>
+        /// Cette méthode gère l'événement click du bouton "Retour".
+        /// Elle ferme la fenêtre actuelle et ouvre la fenêtre principale.
+        /// </summary>
         private void BtnRetour_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
         }
-        
+
+        /// <summary>
+        /// Cette méthode gère l'événement click du bouton "Ajouter".
+        /// Elle insère les données d'un nouvel employé dans la table "VotreTable".
+        /// </summary>
         private void BtnAjouter_Click(object sender, RoutedEventArgs e)
         {
             /*
@@ -79,7 +93,14 @@ namespace Analyse
             */
         }
 
-        
+
+        /// <summary> 
+        /// Gère l'événement Click du champ BtnSupprimer.
+        /// Supprime un enregistrement d'employé de la base de données en fonction du nom saisi dans la zone de texte idnom. 
+        /// Affiche une boîte de message pour indiquer si l'opération a réussi ou non.
+        /// </summary> 
+        ///<param name="sender">Objet qui a déclenché l'événement.</param>
+        /// <param name="e">Arguments de l'événement.</param>
         private void BtnSupprimer_Click(object sender, RoutedEventArgs e)
         {
             /*
