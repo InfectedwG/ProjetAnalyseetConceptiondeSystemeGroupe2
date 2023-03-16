@@ -20,7 +20,7 @@ namespace Analyse
     /// </summary>
     public partial class GererEmploye : Window
     {
-        private string connectionString = "Data Source=SERVER_NAME;Initial Catalog=DATABASE_NAME;User ID=USER_ID;Password=PASSWORD;";
+        
         public MainWindow Model;
 
         public GererEmploye(MainWindow model)
@@ -31,9 +31,8 @@ namespace Analyse
 
         private void BtnRetour_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
+            this.Close();            
+            Model.Show();
         }
         /*
         private void BtnAjouter_Click(object sender, RoutedEventArgs e)

@@ -25,27 +25,32 @@ namespace Analyse
         private SqlConnection connexion = new SqlConnection(@"Data Source=Brazo-PC\SQLEXPRESS02;Initial Catalog=GestionDispoEmploye;Integrated Security=True");
         private List<Employe> employes;
 
+        /// <summary>
+        /// methode qui gere le getteur et accesseur de la liste demploye
+        /// </summary>
         public List<Employe> Employes
         {
             get { return employes; }
             set { employes = value; }
         }
 
+        /// <summary>
+        /// constructeur du model mainwindow. 
+        /// va chercher la liste demplye dans la base de donnees
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
             Employes = GetEmployesDB();
         }
-        public Employe GetEmployeFromList(string nom, List<Employe> liste)
-        {
-            Employe temp = new Employe(nom);
-            foreach (var e in liste)
-            {
 
-            }
-            
-        }
-
+        /// <summary>
+        /// retourne l'id d'un employe de la bas de donnees
+        /// </summary>
+        /// <param name="nom"></param>
+        /// <returns>
+        /// ID
+        /// </returns>
         public int getIdEmployeDB(string nom)
         {
             int id;
@@ -62,7 +67,12 @@ namespace Analyse
 
         }
 
-
+        /// <summary>
+        /// retourne la liste d'employe de la DB
+        /// </summary>
+        /// <returns>
+        /// liste d'employe
+        /// </returns>
         public List<Employe> GetEmployesDB()
         {
             
@@ -133,6 +143,10 @@ namespace Analyse
 
         }
 
+        /// <summary>
+        /// ajoute un employe dans la DB
+        /// </summary>
+        /// <param name="employe"></param>
         public void AjoutEmployeDB(Employe employe)
         {
             int id_employe;
@@ -173,6 +187,13 @@ namespace Analyse
             }            
         }
 
+        /// <summary>
+        /// supprime un employe de la DB
+        /// </summary>
+        /// <param name="nom"></param>
+        /// <returns>
+        /// confirmation
+        /// </returns>
         public bool SupprimerEmployeDB(string nom)
         {
             int id = getIdEmployeDB(nom);
@@ -201,6 +222,15 @@ namespace Analyse
             return confirmation;
         }
 
+        /// <summary>
+        /// recherche un employe dans la liste d'emplye
+        /// </summary>
+        /// <param name="listeNoms"></param>
+        /// <param name="jour"></param>
+        /// <param name="duree"></param>
+        /// <returns>
+        /// retourne un tableau avec le ou les employes et ses dispos
+        /// </returns>
         public string[,] RechercheEmploye(List<string> listeNoms, string jour, TimeSpan duree)
         {
             List<string> resultatsNoms = new List<string>();
@@ -255,11 +285,13 @@ namespace Analyse
         }
 
 
-        private void TextBox_TextChanged()
-        {
+        
 
-        }
-
+        /// <summary>
+        /// affiche la fenetre gereremplye
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GererEmploye_Click(object sender, RoutedEventArgs e)
         {
             GererEmploye gererEmploye = new GererEmploye(this);
@@ -268,6 +300,11 @@ namespace Analyse
             
         }
 
+        /// <summary>
+        /// affiche la fenetre recherche
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void rechercheEmploye_Click(object sender, RoutedEventArgs e)
         {
             Recherche recherche = new Recherche(this);
