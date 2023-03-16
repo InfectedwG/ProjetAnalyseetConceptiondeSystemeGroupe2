@@ -22,12 +22,21 @@ namespace Analyse
 
         public MainWindow Model;
 
+        /// <summary>
+        /// Initialise une nouvelle instance de la classe Recherche avec le modèle MainWindow spécifié.
+        /// </summary>
+        /// <param name="model">Le modèle MainWindow à utiliser</param>
         public Recherche(MainWindow model)
         {
             InitializeComponent();
             Model = model;
         }
-
+        /// <summary>
+        /// Gère l'événement Click du champ BtnRetour.
+        /// Ferme la fenêtre de recherche et affiche la fenêtre principale.
+        /// </summary>
+        ///<param name="sender">Objet qui a déclenché l'événement.</param>
+        /// <param name="e">Arguments de l'événement.</param>
         private void BtnRetour_Click(object sender, RoutedEventArgs e)
         {
            
