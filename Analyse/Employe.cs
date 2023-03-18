@@ -14,7 +14,7 @@ namespace Analyse
     public class Employe
     {
         
-        private string nom;
+        private string? nom;
         private List<Disponibilite> disponibilites = new List<Disponibilite>();
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Analyse
         /// methode qui retourne un employe en string
         /// </summary>
         /// <returns></returns>
-        public string ToString()
+        override public string ToString()
         {
             List<string> disposList = new List<string>();
 

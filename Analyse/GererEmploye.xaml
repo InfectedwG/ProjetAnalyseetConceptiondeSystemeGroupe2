@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Analyse"
+        
         mc:Ignorable="d"
         Title="GererEmploye" Height="450" Width="800">
     <Grid>
@@ -74,7 +75,7 @@
                Grid.Row="2" FontFamily="Segoe UI Black"/>
 
 
-        <TextBox x:Name="idnom" 
+        <TextBox x:Name="txbNom" 
                  HorizontalAlignment="Left" 
                  Margin="55,0,0,0" 
                  Grid.Row="1"
@@ -102,6 +103,9 @@
                  VerticalAlignment="Center" 
                  Width="140" 
                  Height="24"/>
+        
+        
+        
 
 
         <TextBox x:Name="HFLundi" 
