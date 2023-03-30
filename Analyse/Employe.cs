@@ -122,7 +122,7 @@ namespace Analyse
                 $"{disposString}";
         }
 
-        ¸/// <summary>
+        /// <summary>
         /// Cette méthode compare le nom de l'employé avec un nom spécifié et retourne une valeur booléenne indiquant si les noms correspondent.
         /// </summary>
         /// <param name="nom"> Une chaîne de caractères représentant le nom à comparer avec le nom de l'employé </param>
