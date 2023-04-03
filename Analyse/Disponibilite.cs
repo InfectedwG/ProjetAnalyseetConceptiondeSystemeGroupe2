@@ -74,7 +74,7 @@ namespace Analyse
         /// Retourne une chaîne de caractères qui représente l'objet Disponibilite.
         /// </summary>
         /// <returns>Une chaîne de caractères représentant l'objet Disponibilite.</returns>
-        public string ToString()
+        public override string ToString()
         {
             return $"{this.Jour} : {this.HeureDebut} a {this.HeureFin}";
         }
