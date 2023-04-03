@@ -72,11 +72,11 @@ namespace Analyse
 
             //-----------verifier les dispos
 
-            ComboBoxItem temp = 
-            string test = 
-            string test2 = $"test + {test}";
+            //ComboBoxItem temp = 
+            //string test = 
+            //string test2 = $"test + {test}";
 
-            MessageBox.Show(test2, "Resultat : ");
+            //MessageBox.Show(test2, "Resultat : ");
 
             /*
             int HeureDebutLundi = int.Parse(HDLundi.ToString());
