@@ -21,8 +21,8 @@ namespace Analyse
     /// </summary>
     public partial class GererEmploye : Window
     {
-        
-        public MainWindow model;
+       private string connectionString = "Data Source=SERVER_NAME;Initial Catalog=DATABASE_NAME;User ID=USER_ID;Password=PASSWORD;";
+        private MainWindow model;
 
         /// <summary> 
         /// Initialise une nouvelle instance de la classe <see cref="GererEmploye"/> 
@@ -43,8 +43,9 @@ namespace Analyse
         /// <param name="e">Arguments de l'événement.</param>
         private void BtnRetour_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();            
-            model.Show();
+            this.Close();
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
         }
 
         /// <summary>
@@ -99,7 +100,32 @@ namespace Analyse
         /// <param name="e">Arguments de l'événement.</param>
         private void BtnSupprimer_Click(object sender, RoutedEventArgs e)
         {
-            
+            /*
+            string nom = idnom.Text;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // Créer une commande SQL pour supprimer les données de la table appropriée
+                string query = "DELETE FROM VotreTable WHERE Nom=@Nom";
+                SqlCommand command = new SqlCommand(query, connection);
+
+                // Ajouter les paramètres à la commande SQL
+                command.Parameters.AddWithValue("@Nom", nom);
+
+                // Exécuter la commande SQL
+                int rowsAffected = command.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Employé supprimé avec succès.");
+                }
+                else
+                {
+                    MessageBox.Show("Aucun employé trouvé avec ce nom.");
+                }
+            }
+            */
         }
 
     }

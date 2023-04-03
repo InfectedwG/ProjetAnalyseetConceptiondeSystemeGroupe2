@@ -41,7 +41,8 @@ namespace Analyse
         {
            
                 this.Close();
-                Model.Show();
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
             
 
         }

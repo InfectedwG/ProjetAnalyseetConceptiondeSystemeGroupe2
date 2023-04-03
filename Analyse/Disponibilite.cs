@@ -13,7 +13,7 @@ namespace Analyse
     {
         private TimeOnly heureDebut;
         private TimeOnly heureFin;
-        private string? jour;
+        private string jour;
 
         /// <summary>
         /// Obtient ou définit l'heure de début de la disponibilité.
@@ -74,7 +74,7 @@ namespace Analyse
         /// Retourne une chaîne de caractères qui représente l'objet Disponibilite.
         /// </summary>
         /// <returns>Une chaîne de caractères représentant l'objet Disponibilite.</returns>
-        override public string ToString()
+        public string ToString()
         {
             return $"{this.Jour} : {this.HeureDebut} a {this.HeureFin}";
         }
