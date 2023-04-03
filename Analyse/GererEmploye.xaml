@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Analyse"
-        
         mc:Ignorable="d"
         Title="GererEmploye" Height="450" Width="800">
     <Grid>
@@ -24,6 +23,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        
 
         <Label Content="PlateForme de Gestion de disponibilité" 
                HorizontalAlignment="Center" 
@@ -75,7 +75,7 @@
                Grid.Row="2" FontFamily="Segoe UI Black"/>
 
 
-        <TextBox x:Name="txbNom" 
+        <TextBox x:Name="idnom" 
                  HorizontalAlignment="Left" 
                  Margin="55,0,0,0" 
                  Grid.Row="1"
@@ -94,29 +94,135 @@
                Height="26" 
                Grid.Row="3" FontFamily="Segoe UI Black"/>
 
-        <TextBox x:Name="HDLundi" 
-                 HorizontalAlignment="Left" 
-                 Margin="55,0,0,0" 
-                 Grid.Row="3"
-                 Grid.Column="1"
-                 TextWrapping="Wrap"  
-                 VerticalAlignment="Center" 
-                 Width="140" 
-                 Height="24"/>
-        
-        
-        
+
+        <Label Content="Heure : "
+               Grid.Row="3"
+               Grid.Column="1"
+               VerticalAlignment="Center"
+               Margin="10 0 0 0"
+               />
 
 
-        <TextBox x:Name="HFLundi" 
-                 HorizontalAlignment="Left" 
-                 Margin="55,0,0,0" 
-                 Grid.Row="3"
-                 Grid.Column="2"
-                 TextWrapping="Wrap"  
-                 VerticalAlignment="Center" 
-                 Width="140" 
-                 Height="24"/>
+        <ComboBox x:Name="HDLundi"
+                  Grid.Row="3"
+                  Grid.Column="1" 
+                  VerticalAlignment="Center" 
+                  Width="60" 
+                  Height="24"
+                  HorizontalAlignment="Left"
+                  Margin="60 0 0 0"
+                  SelectedIndex="0">
+            <ComboBoxItem>N/A</ComboBoxItem>
+            <ComboBoxItem>00</ComboBoxItem>
+            <ComboBoxItem>01</ComboBoxItem>
+            <ComboBoxItem>02</ComboBoxItem>
+            <ComboBoxItem>03</ComboBoxItem>
+            <ComboBoxItem>04</ComboBoxItem>
+            <ComboBoxItem>05</ComboBoxItem>
+            <ComboBoxItem>06</ComboBoxItem>
+            <ComboBoxItem>07</ComboBoxItem>
+            <ComboBoxItem>08</ComboBoxItem>
+            <ComboBoxItem>09</ComboBoxItem>
+            <ComboBoxItem>10</ComboBoxItem>
+            <ComboBoxItem>11</ComboBoxItem>
+            <ComboBoxItem>12</ComboBoxItem>
+            <ComboBoxItem>13</ComboBoxItem>
+            <ComboBoxItem>14</ComboBoxItem>
+            <ComboBoxItem>15</ComboBoxItem>
+            <ComboBoxItem>16</ComboBoxItem>
+            <ComboBoxItem>17</ComboBoxItem>
+            <ComboBoxItem>18</ComboBoxItem>
+            <ComboBoxItem>19</ComboBoxItem>
+            <ComboBoxItem>20</ComboBoxItem>
+            <ComboBoxItem>21</ComboBoxItem>
+            <ComboBoxItem>22</ComboBoxItem>
+            <ComboBoxItem>23</ComboBoxItem>
+        </ComboBox>
+        <Label Content="Minute : "
+               Grid.Row="3"
+               Grid.Column="1"
+               VerticalAlignment="Center"
+               Margin="125 0 0 0"
+               />
+        <ComboBox x:Name="MDLundi"
+                  Grid.Row="3"
+                  Grid.Column="1" 
+                  VerticalAlignment="Center" 
+                  Width="60" 
+                  Height="24"
+                  HorizontalAlignment="Left"
+                  Margin="180 0 0 0"
+                  SelectedIndex="0">
+            <ComboBoxItem>N/A</ComboBoxItem>
+            <ComboBoxItem>00</ComboBoxItem>
+            <ComboBoxItem>15</ComboBoxItem>
+            <ComboBoxItem>30</ComboBoxItem>
+            <ComboBoxItem>45</ComboBoxItem>
+        </ComboBox>
+
+        <Label Content="Heure : "
+               Grid.Row="3"
+               Grid.Column="2"
+               VerticalAlignment="Center"
+               Margin="10 0 0 0"
+               />
+
+        <ComboBox x:Name="HFLundi"
+                  Grid.Row="3"
+                  Grid.Column="2" 
+                  VerticalAlignment="Center" 
+                  Width="60" 
+                  Height="24"
+                  HorizontalAlignment="Left"
+                  Margin="60 0 0 0"
+                  SelectedIndex="0">
+            <ComboBoxItem>N/A</ComboBoxItem>
+            <ComboBoxItem>00</ComboBoxItem>
+            <ComboBoxItem>01</ComboBoxItem>
+            <ComboBoxItem>02</ComboBoxItem>
+            <ComboBoxItem>03</ComboBoxItem>
+            <ComboBoxItem>04</ComboBoxItem>
+            <ComboBoxItem>05</ComboBoxItem>
+            <ComboBoxItem>06</ComboBoxItem>
+            <ComboBoxItem>07</ComboBoxItem>
+            <ComboBoxItem>08</ComboBoxItem>
+            <ComboBoxItem>09</ComboBoxItem>
+            <ComboBoxItem>10</ComboBoxItem>
+            <ComboBoxItem>11</ComboBoxItem>
+            <ComboBoxItem>12</ComboBoxItem>
+            <ComboBoxItem>13</ComboBoxItem>
+            <ComboBoxItem>14</ComboBoxItem>
+            <ComboBoxItem>15</ComboBoxItem>
+            <ComboBoxItem>16</ComboBoxItem>
+            <ComboBoxItem>17</ComboBoxItem>
+            <ComboBoxItem>18</ComboBoxItem>
+            <ComboBoxItem>19</ComboBoxItem>
+            <ComboBoxItem>20</ComboBoxItem>
+            <ComboBoxItem>21</ComboBoxItem>
+            <ComboBoxItem>22</ComboBoxItem>
+            <ComboBoxItem>23</ComboBoxItem>
+        </ComboBox>
+        <Label Content="Minute : "
+               Grid.Row="3"
+               Grid.Column="2"
+               VerticalAlignment="Center"
+               Margin="125 0 0 0"
+               />
+        <ComboBox x:Name="MFLundi"
+                  Grid.Row="3"
+                  Grid.Column="2" 
+                  VerticalAlignment="Center" 
+                  Width="60" 
+                  Height="24"
+                  HorizontalAlignment="Left"
+                  Margin="180 0 0 0"
+                  SelectedIndex="0">
+            <ComboBoxItem>N/A</ComboBoxItem>
+            <ComboBoxItem>00</ComboBoxItem>
+            <ComboBoxItem>15</ComboBoxItem>
+            <ComboBoxItem>30</ComboBoxItem>
+            <ComboBoxItem>45</ComboBoxItem>
+        </ComboBox>
 
         <Label Content="Mardi" 
                HorizontalAlignment="Center" 
@@ -127,25 +233,136 @@
                Height="26" 
                Grid.Row="4" FontFamily="Segoe UI Black"/>
 
-        <TextBox x:Name="HDMardi" 
-                 HorizontalAlignment="Left" 
-                 Margin="55,0,0,0" 
-                 Grid.Row="4"
-                 Grid.Column="1"
-                 TextWrapping="Wrap"  
-                 VerticalAlignment="Center" 
-                 Width="140" 
-                 Height="24"/>
+        <Label Content="Heure : "
+               Grid.Row="4"
+               Grid.Column="1"
+               VerticalAlignment="Center"
+               Margin="10 0 0 0"
+               />
 
-        <TextBox x:Name="HFMardi" 
-                 HorizontalAlignment="Left" 
-                 Margin="55,0,0,0" 
-                 Grid.Row="4" 
-                 Grid.Column="2"
-                 TextWrapping="Wrap"  
-                 VerticalAlignment="Center" 
-                 Width="140" 
-                 Height="24"/>
+        <ComboBox x:Name="HDMardi"
+                  Grid.Row="4"
+                  Grid.Column="1" 
+                  VerticalAlignment="Center" 
+                  Width="60" 
+                  Height="24"
+                  HorizontalAlignment="Left"
+                  Margin="60 0 0 0"
+                  SelectedIndex="0">
+            <ComboBoxItem>N/A</ComboBoxItem>
+            <ComboBoxItem>00</ComboBoxItem>
+            <ComboBoxItem>01</ComboBoxItem>
+            <ComboBoxItem>02</ComboBoxItem>
+            <ComboBoxItem>03</ComboBoxItem>
+            <ComboBoxItem>04</ComboBoxItem>
+            <ComboBoxItem>05</ComboBoxItem>
+            <ComboBoxItem>06</ComboBoxItem>
+            <ComboBoxItem>07</ComboBoxItem>
+            <ComboBoxItem>08</ComboBoxItem>
+            <ComboBoxItem>09</ComboBoxItem>
+            <ComboBoxItem>10</ComboBoxItem>
+            <ComboBoxItem>11</ComboBoxItem>
+            <ComboBoxItem>12</ComboBoxItem>
+            <ComboBoxItem>13</ComboBoxItem>
+            <ComboBoxItem>14</ComboBoxItem>
+            <ComboBoxItem>15</ComboBoxItem>
+            <ComboBoxItem>16</ComboBoxItem>
+            <ComboBoxItem>17</ComboBoxItem>
+            <ComboBoxItem>18</ComboBoxItem>
+            <ComboBoxItem>19</ComboBoxItem>
+            <ComboBoxItem>20</ComboBoxItem>
+            <ComboBoxItem>21</ComboBoxItem>
+            <ComboBoxItem>22</ComboBoxItem>
+            <ComboBoxItem>23</ComboBoxItem>
+        </ComboBox>
+        
+        <Label Content="Minute : "
+               Grid.Row="4"
+               Grid.Column="1"
+               VerticalAlignment="Center"
+               Margin="125 0 0 0"
+               />
+        <ComboBox x:Name="MDMardi"
+                  Grid.Row="4"
+                  Grid.Column="1" 
+                  VerticalAlignment="Center" 
+                  Width="60" 
+                  Height="24"
+                  HorizontalAlignment="Left"
+                  Margin="180 0 0 0"
+                  SelectedIndex="0">
+            <ComboBoxItem>N/A</ComboBoxItem>
+            <ComboBoxItem>00</ComboBoxItem>
+            <ComboBoxItem>15</ComboBoxItem>
+            <ComboBoxItem>30</ComboBoxItem>
+            <ComboBoxItem>45</ComboBoxItem>
+        </ComboBox>
+
+        <Label Content="Heure : "
+               Grid.Row="4"
+               Grid.Column="2"
+               VerticalAlignment="Center"
+               Margin="10 0 0 0"
+               />
+
+        <ComboBox x:Name="HFMardi"
+                  Grid.Row="4"
+                  Grid.Column="2" 
+                  VerticalAlignment="Center" 
+                  Width="60" 
+                  Height="24"
+                  HorizontalAlignment="Left"
+                  Margin="60 0 0 0"
+                  SelectedIndex="0">
+            <ComboBoxItem>N/A</ComboBoxItem>
+            <ComboBoxItem>00</ComboBoxItem>
+            <ComboBoxItem>01</ComboBoxItem>
+            <ComboBoxItem>02</ComboBoxItem>
+            <ComboBoxItem>03</ComboBoxItem>
+            <ComboBoxItem>04</ComboBoxItem>
+            <ComboBoxItem>05</ComboBoxItem>
+            <ComboBoxItem>06</ComboBoxItem>
+            <ComboBoxItem>07</ComboBoxItem>
+            <ComboBoxItem>08</ComboBoxItem>
+            <ComboBoxItem>09</ComboBoxItem>
+            <ComboBoxItem>10</ComboBoxItem>
+            <ComboBoxItem>11</ComboBoxItem>
+            <ComboBoxItem>12</ComboBoxItem>
+            <ComboBoxItem>13</ComboBoxItem>
+            <ComboBoxItem>14</ComboBoxItem>
+            <ComboBoxItem>15</ComboBoxItem>
+            <ComboBoxItem>16</ComboBoxItem>
+            <ComboBoxItem>17</ComboBoxItem>
+            <ComboBoxItem>18</ComboBoxItem>
+            <ComboBoxItem>19</ComboBoxItem>
+            <ComboBoxItem>20</ComboBoxItem>
+            <ComboBoxItem>21</ComboBoxItem>
+            <ComboBoxItem>22</ComboBoxItem>
+            <ComboBoxItem>23</ComboBoxItem>
+        </ComboBox>
+        <Label Content="Minute : "
+               Grid.Row="4"
+               Grid.Column="2"
+               VerticalAlignment="Center"
+               Margin="125 0 0 0"
+               />
+        <ComboBox x:Name="MFMardi"
+                  Grid.Row="4"
+                  Grid.Column="2" 
+                  VerticalAlignment="Center" 
+                  Width="60" 
+                  Height="24"
+                  HorizontalAlignment="Left"
+                  Margin="180 0 0 0"
+                  SelectedIndex="0">
+            <ComboBoxItem>N/A</ComboBoxItem>
+            <ComboBoxItem>00</ComboBoxItem>
+            <ComboBoxItem>15</ComboBoxItem>
+            <ComboBoxItem>30</ComboBoxItem>
+            <ComboBoxItem>45</ComboBoxItem>
+        </ComboBox>
+
+        
 
         <Label Content="Mercredi" 
                HorizontalAlignment="Center" 
@@ -156,25 +373,135 @@
                Height="26" 
                Grid.Row="5" FontFamily="Segoe UI Black"/>
 
-        <TextBox x:Name="HDMercredi" 
-                 HorizontalAlignment="Left" 
-                 Margin="55,0,0,0" 
-                 Grid.Row="5"
-                 Grid.Column="1"
-                 TextWrapping="Wrap"  
-                 VerticalAlignment="Center" 
-                 Width="140" 
-                 Height="24"/>
+        <Label Content="Heure : "
+               Grid.Row="5"
+               Grid.Column="1"
+               VerticalAlignment="Center"
+               Margin="10 0 0 0"
+               />
 
-        <TextBox x:Name="HFMercredi" 
-                 HorizontalAlignment="Left" 
-                 Margin="55,0,0,0" 
-                 Grid.Row="5" 
-                 Grid.Column="2"
-                 TextWrapping="Wrap"  
-                 VerticalAlignment="Center" 
-                 Width="140" 
-                 Height="24"/>
+        <ComboBox x:Name="HDMercredi"
+                  Grid.Row="5"
+                  Grid.Column="1" 
+                  VerticalAlignment="Center" 
+                  Width="60" 
+                  Height="24"
+                  HorizontalAlignment="Left"
+                  Margin="60 0 0 0"
+                  SelectedIndex="0">
+            <ComboBoxItem>N/A</ComboBoxItem>
+            <ComboBoxItem>00</ComboBoxItem>
+            <ComboBoxItem>01</ComboBoxItem>
+            <ComboBoxItem>02</ComboBoxItem>
+            <ComboBoxItem>03</ComboBoxItem>
+            <ComboBoxItem>04</ComboBoxItem>
+            <ComboBoxItem>05</ComboBoxItem>
+            <ComboBoxItem>06</ComboBoxItem>
+            <ComboBoxItem>07</ComboBoxItem>
+            <ComboBoxItem>08</ComboBoxItem>
+            <ComboBoxItem>09</ComboBoxItem>
+            <ComboBoxItem>10</ComboBoxItem>
+            <ComboBoxItem>11</ComboBoxItem>
+            <ComboBoxItem>12</ComboBoxItem>
+            <ComboBoxItem>13</ComboBoxItem>
+            <ComboBoxItem>14</ComboBoxItem>
+            <ComboBoxItem>15</ComboBoxItem>
+            <ComboBoxItem>16</ComboBoxItem>
+            <ComboBoxItem>17</ComboBoxItem>
+            <ComboBoxItem>18</ComboBoxItem>
+            <ComboBoxItem>19</ComboBoxItem>
+            <ComboBoxItem>20</ComboBoxItem>
+            <ComboBoxItem>21</ComboBoxItem>
+            <ComboBoxItem>22</ComboBoxItem>
+            <ComboBoxItem>23</ComboBoxItem>
+        </ComboBox>
+        <Label Content="Minute : "
+               Grid.Row="5"
+               Grid.Column="1"
+               VerticalAlignment="Center"
+               Margin="125 0 0 0"
+               />
+        <ComboBox x:Name="MDMercredi"
+                  Grid.Row="5"
+                  Grid.Column="1" 
+                  VerticalAlignment="Center" 
+                  Width="60" 
+                  Height="24"
+                  HorizontalAlignment="Left"
+                  Margin="180 0 0 0"
+                  SelectedIndex="0">
+            <ComboBoxItem>N/A</ComboBoxItem>
+            <ComboBoxItem>00</ComboBoxItem>
+            <ComboBoxItem>15</ComboBoxItem>
+            <ComboBoxItem>30</ComboBoxItem>
+            <ComboBoxItem>45</ComboBoxItem>
+        </ComboBox>
+
+        <Label Content="Heure : "
+               Grid.Row="5"
+               Grid.Column="2"
+               VerticalAlignment="Center"
+               Margin="10 0 0 0"
+               />
+
+        <ComboBox x:Name="HFMercredi"
+                  Grid.Row="5"
+                  Grid.Column="2" 
+                  VerticalAlignment="Center" 
+                  Width="60" 
+                  Height="24"
+                  HorizontalAlignment="Left"
+                  Margin="60 0 0 0"
+                  SelectedIndex="0">
+            <ComboBoxItem>N/A</ComboBoxItem>
+            <ComboBoxItem>00</ComboBoxItem>
+            <ComboBoxItem>01</ComboBoxItem>
+            <ComboBoxItem>02</ComboBoxItem>
+            <ComboBoxItem>03</ComboBoxItem>
+            <ComboBoxItem>04</ComboBoxItem>
+            <ComboBoxItem>05</ComboBoxItem>
+            <ComboBoxItem>06</ComboBoxItem>
+            <ComboBoxItem>07</ComboBoxItem>
+            <ComboBoxItem>08</ComboBoxItem>
+            <ComboBoxItem>09</ComboBoxItem>
+            <ComboBoxItem>10</ComboBoxItem>
+            <ComboBoxItem>11</ComboBoxItem>
+            <ComboBoxItem>12</ComboBoxItem>
+            <ComboBoxItem>13</ComboBoxItem>
+            <ComboBoxItem>14</ComboBoxItem>
+            <ComboBoxItem>15</ComboBoxItem>
+            <ComboBoxItem>16</ComboBoxItem>
+            <ComboBoxItem>17</ComboBoxItem>
+            <ComboBoxItem>18</ComboBoxItem>
+            <ComboBoxItem>19</ComboBoxItem>
+            <ComboBoxItem>20</ComboBoxItem>
+            <ComboBoxItem>21</ComboBoxItem>
+            <ComboBoxItem>22</ComboBoxItem>
+            <ComboBoxItem>23</ComboBoxItem>
+        </ComboBox>
+        <Label Content="Minute : "
+               Grid.Row="5"
+               Grid.Column="2"
+               VerticalAlignment="Center"
+               Margin="125 0 0 0"
+               />
+        <ComboBox x:Name="MFMercredi"
+                  Grid.Row="5"
+                  Grid.Column="2" 
+                  VerticalAlignment="Center" 
+                  Width="60" 
+                  Height="24"
+                  HorizontalAlignment="Left"
+                  Margin="180 0 0 0"
+                  SelectedIndex="0">
+            <ComboBoxItem>N/A</ComboBoxItem>
+            <ComboBoxItem>00</ComboBoxItem>
+            <ComboBoxItem>15</ComboBoxItem>
+            <ComboBoxItem>30</ComboBoxItem>
+            <ComboBoxItem>45</ComboBoxItem>
+        </ComboBox>
+
+        
 
         <Label Content="Jeudi" 
                HorizontalAlignment="Center" 
@@ -185,25 +512,134 @@
                Height="26" 
                Grid.Row="6" FontFamily="Segoe UI Black"/>
 
-        <TextBox x:Name="HDJeudi" 
-                 HorizontalAlignment="Left" 
-                 Margin="55,0,0,0" 
-                 Grid.Row="6"
-                 Grid.Column="1"
-                 TextWrapping="Wrap"  
-                 VerticalAlignment="Center" 
-                 Width="140" 
-                 Height="24"/>
+        <Label Content="Heure : "
+               Grid.Row="6"
+               Grid.Column="1"
+               VerticalAlignment="Center"
+               Margin="10 0 0 0"
+               />
 
-        <TextBox x:Name="HFJeudi" 
-                 HorizontalAlignment="Left" 
-                 Margin="55,0,0,0" 
-                 Grid.Row="6"
-                 Grid.Column="2"
-                 TextWrapping="Wrap"  
-                 VerticalAlignment="Center" 
-                 Width="140" 
-                 Height="24"/>
+        <ComboBox x:Name="HDJeudi"
+                  Grid.Row="6"
+                  Grid.Column="1" 
+                  VerticalAlignment="Center" 
+                  Width="60" 
+                  Height="24"
+                  HorizontalAlignment="Left"
+                  Margin="60 0 0 0"
+                  SelectedIndex="0">
+            <ComboBoxItem>N/A</ComboBoxItem>
+            <ComboBoxItem>00</ComboBoxItem>
+            <ComboBoxItem>01</ComboBoxItem>
+            <ComboBoxItem>02</ComboBoxItem>
+            <ComboBoxItem>03</ComboBoxItem>
+            <ComboBoxItem>04</ComboBoxItem>
+            <ComboBoxItem>05</ComboBoxItem>
+            <ComboBoxItem>06</ComboBoxItem>
+            <ComboBoxItem>07</ComboBoxItem>
+            <ComboBoxItem>08</ComboBoxItem>
+            <ComboBoxItem>09</ComboBoxItem>
+            <ComboBoxItem>10</ComboBoxItem>
+            <ComboBoxItem>11</ComboBoxItem>
+            <ComboBoxItem>12</ComboBoxItem>
+            <ComboBoxItem>13</ComboBoxItem>
+            <ComboBoxItem>14</ComboBoxItem>
+            <ComboBoxItem>15</ComboBoxItem>
+            <ComboBoxItem>16</ComboBoxItem>
+            <ComboBoxItem>17</ComboBoxItem>
+            <ComboBoxItem>18</ComboBoxItem>
+            <ComboBoxItem>19</ComboBoxItem>
+            <ComboBoxItem>20</ComboBoxItem>
+            <ComboBoxItem>21</ComboBoxItem>
+            <ComboBoxItem>22</ComboBoxItem>
+            <ComboBoxItem>23</ComboBoxItem>
+        </ComboBox>
+        <Label Content="Minute : "
+               Grid.Row="6"
+               Grid.Column="1"
+               VerticalAlignment="Center"
+               Margin="125 0 0 0"
+               />
+        <ComboBox x:Name="MDJeudi"
+                  Grid.Row="6"
+                  Grid.Column="1" 
+                  VerticalAlignment="Center" 
+                  Width="60" 
+                  Height="24"
+                  HorizontalAlignment="Left"
+                  Margin="180 0 0 0"
+                  SelectedIndex="0">
+            <ComboBoxItem>N/A</ComboBoxItem>
+            <ComboBoxItem>00</ComboBoxItem>
+            <ComboBoxItem>15</ComboBoxItem>
+            <ComboBoxItem>30</ComboBoxItem>
+            <ComboBoxItem>45</ComboBoxItem>
+        </ComboBox>
+
+        <Label Content="Heure : "
+               Grid.Row="6"
+               Grid.Column="2"
+               VerticalAlignment="Center"
+               Margin="10 0 0 0"
+               />
+
+        <ComboBox x:Name="HFJeudi"
+                  Grid.Row="6"
+                  Grid.Column="2" 
+                  VerticalAlignment="Center" 
+                  Width="60" 
+                  Height="24"
+                  HorizontalAlignment="Left"
+                  Margin="60 0 0 0"
+                  SelectedItem="0"
+                  SelectedIndex="0">
+            <ComboBoxItem>N/A</ComboBoxItem>
+            <ComboBoxItem>00</ComboBoxItem>
+            <ComboBoxItem>01</ComboBoxItem>
+            <ComboBoxItem>02</ComboBoxItem>
+            <ComboBoxItem>03</ComboBoxItem>
+            <ComboBoxItem>04</ComboBoxItem>
+            <ComboBoxItem>05</ComboBoxItem>
+            <ComboBoxItem>06</ComboBoxItem>
+            <ComboBoxItem>07</ComboBoxItem>
+            <ComboBoxItem>08</ComboBoxItem>
+            <ComboBoxItem>09</ComboBoxItem>
+            <ComboBoxItem>10</ComboBoxItem>
+            <ComboBoxItem>11</ComboBoxItem>
+            <ComboBoxItem>12</ComboBoxItem>
+            <ComboBoxItem>13</ComboBoxItem>
+            <ComboBoxItem>14</ComboBoxItem>
+            <ComboBoxItem>15</ComboBoxItem>
+            <ComboBoxItem>16</ComboBoxItem>
+            <ComboBoxItem>17</ComboBoxItem>
+            <ComboBoxItem>18</ComboBoxItem>
+            <ComboBoxItem>19</ComboBoxItem>
+            <ComboBoxItem>20</ComboBoxItem>
+            <ComboBoxItem>21</ComboBoxItem>
+            <ComboBoxItem>22</ComboBoxItem>
+            <ComboBoxItem>23</ComboBoxItem>
+        </ComboBox>
+        <Label Content="Minute : "
+               Grid.Row="6"
+               Grid.Column="2"
+               VerticalAlignment="Center"
+               Margin="125 0 0 0"
+               />
+        <ComboBox x:Name="MFJeudi"
+                  Grid.Row="6"
+                  Grid.Column="2" 
+                  VerticalAlignment="Center" 
+                  Width="60" 
+                  Height="24"
+                  HorizontalAlignment="Left"
+                  Margin="180 0 0 0"
+                  SelectedIndex="0">
+            <ComboBoxItem>N/A</ComboBoxItem>
+            <ComboBoxItem>00</ComboBoxItem>
+            <ComboBoxItem>15</ComboBoxItem>
+            <ComboBoxItem>30</ComboBoxItem>
+            <ComboBoxItem>45</ComboBoxItem>
+        </ComboBox>
 
         <Label Content="Vendredi" 
                HorizontalAlignment="Center" 
@@ -214,25 +650,133 @@
                Height="26" 
                Grid.Row="7" FontFamily="Segoe UI Black"/>
 
-        <TextBox x:Name="HDVendredi" 
-                 HorizontalAlignment="Left" 
-                 Margin="55,0,0,0" 
-                 Grid.Row="7"
-                 Grid.Column="1"
-                 TextWrapping="Wrap"  
-                 VerticalAlignment="Center" 
-                 Width="140" 
-                 Height="24"/>
+        <Label Content="Heure : "
+               Grid.Row="7"
+               Grid.Column="1"
+               VerticalAlignment="Center"
+               Margin="10 0 0 0"
+               />
 
-        <TextBox x:Name="HFVendredi" 
-                 HorizontalAlignment="Left" 
-                 Margin="55,0,0,0" 
-                 Grid.Row="7"
-                 Grid.Column="2"
-                 TextWrapping="Wrap"  
-                 VerticalAlignment="Center" 
-                 Width="140" 
-                 Height="24"/>
+        <ComboBox x:Name="HDVendredi"
+                  Grid.Row="7"
+                  Grid.Column="1" 
+                  VerticalAlignment="Center" 
+                  Width="60" 
+                  Height="24"
+                  HorizontalAlignment="Left"
+                  Margin="60 0 0 0"
+                  SelectedIndex="0">
+            <ComboBoxItem>N/A</ComboBoxItem>
+            <ComboBoxItem>00</ComboBoxItem>
+            <ComboBoxItem>01</ComboBoxItem>
+            <ComboBoxItem>02</ComboBoxItem>
+            <ComboBoxItem>03</ComboBoxItem>
+            <ComboBoxItem>04</ComboBoxItem>
+            <ComboBoxItem>05</ComboBoxItem>
+            <ComboBoxItem>06</ComboBoxItem>
+            <ComboBoxItem>07</ComboBoxItem>
+            <ComboBoxItem>08</ComboBoxItem>
+            <ComboBoxItem>09</ComboBoxItem>
+            <ComboBoxItem>10</ComboBoxItem>
+            <ComboBoxItem>11</ComboBoxItem>
+            <ComboBoxItem>12</ComboBoxItem>
+            <ComboBoxItem>13</ComboBoxItem>
+            <ComboBoxItem>14</ComboBoxItem>
+            <ComboBoxItem>15</ComboBoxItem>
+            <ComboBoxItem>16</ComboBoxItem>
+            <ComboBoxItem>17</ComboBoxItem>
+            <ComboBoxItem>18</ComboBoxItem>
+            <ComboBoxItem>19</ComboBoxItem>
+            <ComboBoxItem>20</ComboBoxItem>
+            <ComboBoxItem>21</ComboBoxItem>
+            <ComboBoxItem>22</ComboBoxItem>
+            <ComboBoxItem>23</ComboBoxItem>
+        </ComboBox>
+        <Label Content="Minute : "
+               Grid.Row="7"
+               Grid.Column="1"
+               VerticalAlignment="Center"
+               Margin="125 0 0 0"
+               />
+        <ComboBox x:Name="MDVendredi"
+                  Grid.Row="7"
+                  Grid.Column="1" 
+                  VerticalAlignment="Center" 
+                  Width="60" 
+                  Height="24"
+                  HorizontalAlignment="Left"
+                  Margin="180 0 0 0"
+                  SelectedIndex="0">
+            <ComboBoxItem>N/A</ComboBoxItem>
+            <ComboBoxItem>00</ComboBoxItem>
+            <ComboBoxItem>15</ComboBoxItem>
+            <ComboBoxItem>30</ComboBoxItem>
+            <ComboBoxItem>45</ComboBoxItem>
+        </ComboBox>
+
+        <Label Content="Heure : "
+               Grid.Row="7"
+               Grid.Column="2"
+               VerticalAlignment="Center"
+               Margin="10 0 0 0"
+               />
+
+        <ComboBox x:Name="HFVendredi"
+                  Grid.Row="7"
+                  Grid.Column="2" 
+                  VerticalAlignment="Center" 
+                  Width="60" 
+                  Height="24"
+                  HorizontalAlignment="Left"
+                  Margin="60 0 0 0"
+                  SelectedIndex="0">
+            <ComboBoxItem>N/A</ComboBoxItem>
+            <ComboBoxItem>00</ComboBoxItem>
+            <ComboBoxItem>01</ComboBoxItem>
+            <ComboBoxItem>02</ComboBoxItem>
+            <ComboBoxItem>03</ComboBoxItem>
+            <ComboBoxItem>04</ComboBoxItem>
+            <ComboBoxItem>05</ComboBoxItem>
+            <ComboBoxItem>06</ComboBoxItem>
+            <ComboBoxItem>07</ComboBoxItem>
+            <ComboBoxItem>08</ComboBoxItem>
+            <ComboBoxItem>09</ComboBoxItem>
+            <ComboBoxItem>10</ComboBoxItem>
+            <ComboBoxItem>11</ComboBoxItem>
+            <ComboBoxItem>12</ComboBoxItem>
+            <ComboBoxItem>13</ComboBoxItem>
+            <ComboBoxItem>14</ComboBoxItem>
+            <ComboBoxItem>15</ComboBoxItem>
+            <ComboBoxItem>16</ComboBoxItem>
+            <ComboBoxItem>17</ComboBoxItem>
+            <ComboBoxItem>18</ComboBoxItem>
+            <ComboBoxItem>19</ComboBoxItem>
+            <ComboBoxItem>20</ComboBoxItem>
+            <ComboBoxItem>21</ComboBoxItem>
+            <ComboBoxItem>22</ComboBoxItem>
+            <ComboBoxItem>23</ComboBoxItem>
+        </ComboBox>
+        <Label Content="Minute : "
+               Grid.Row="7"
+               Grid.Column="2"
+               VerticalAlignment="Center"
+               Margin="125 0 0 0"
+               />
+        <ComboBox x:Name="MFVendredi"
+                  Grid.Row="7"
+                  Grid.Column="2" 
+                  VerticalAlignment="Center" 
+                  Width="60" 
+                  Height="24"
+                  HorizontalAlignment="Left"
+                  Margin="180 0 0 0"
+                  SelectedIndex="0">
+            <ComboBoxItem>N/A</ComboBoxItem>
+            <ComboBoxItem>00</ComboBoxItem>
+            <ComboBoxItem>15</ComboBoxItem>
+            <ComboBoxItem>30</ComboBoxItem>
+            <ComboBoxItem>45</ComboBoxItem>
+        </ComboBox>
 
 
 

@@ -9,7 +9,7 @@ using System.Data;
 namespace Analyse
 {
     /// <summary>
-    /// classe de lobjet employe
+    /// Classe représentant un employé avec un nom et des disponibilités.
     /// </summary>
     public class Employe
     {
@@ -18,7 +18,7 @@ namespace Analyse
         private List<Disponibilite> disponibilites = new List<Disponibilite>();
 
         /// <summary>
-        /// La methode qui gere l'accesseur et le getteur de la propriete nom
+        /// Propriété pour accéder et définir le nom de l'employé.
         /// </summary>
         public string Nom
         {
@@ -27,7 +27,7 @@ namespace Analyse
         }
 
         /// <summary>
-        /// La methode qui gere l'accesseur et le getteur de la de disponibilité dun employé
+        /// Propriété pour accéder à la liste des disponibilités de l'employé.
         /// </summary>
         public List<Disponibilite> Disponibilites
         {
@@ -35,19 +35,19 @@ namespace Analyse
         }
 
         /// <summary>
-        /// Un constructeur de lobjet employé avec son nom
+        /// Constructeur de la classe Employe avec un nom spécifié.
         /// </summary>
-        /// <param name="nom"></param>
+        /// <param name="nom">Le nom de l'employé.</param>
         public Employe(string nom)
         {
             Nom = nom;
         }
 
         /// <summary>
-        /// Un constructeur de lobjet employé avec son nom et la liste de dispos
+        /// Constructeur de la classe Employe avec un nom et une liste de disponibilités spécifiés.
         /// </summary>
-        /// <param name="nom"></param>
-        /// <param name="dispos"></param>
+        /// <param name="nom">Le nom de l'employé.</param>
+        /// <param name="dispos">La liste des disponibilités de l'employé.</param>
         public Employe(string nom, List<Disponibilite> dispos)
         {
             Nom = nom;
@@ -58,24 +58,33 @@ namespace Analyse
         }
 
         /// <summary>
-        /// methode qui gere l'ajout d'une disponibilite dans la liste
+        /// Ajoute une disponibilité à la liste de disponibilités de l'employé.
         /// </summary>
-        /// <param name="dispo"></param>
+        /// <param name="dispo">La disponibilité à ajouter.</param>
         public void AjouterDispo(Disponibilite dispo)
         {
             disponibilites.Add(dispo);
         }
-        
+
         /// <summary>
-        /// methode qui gere la recherche dune dispo a laide du jour et la duree.
-        /// elle retourne une confirmation et la liste des dispos 
+        /// Retourne une disponibilité spécifique de la liste de disponibilités de l'employé.
         /// </summary>
-        /// <param name="jour"></param>
-        /// <param name="duree"></param>
-        /// <param name="listeHeuresDebut"></param>
-        /// <param name="listeHeuresFin"></param>
-        /// <param name="listeJours"></param>
-        /// <returns></returns>
+        /// <param name="dispo">La disponibilité à retourner.</param>
+        /// <returns>La disponibilité spécifiée.</returns>
+        public Disponibilite RetournerDispos(Disponibilite dispo)
+        {
+            return dispo;
+        }
+
+        /// <summary>
+        /// Cette méthode compare les disponibilités de l'employé pour un jour donné avec une durée spécifique et retourne une valeur booléenne indiquant si l'employé est disponible pendant cette période.
+        /// </summary>
+        /// <param name="jour">Une chaîne de caractères représentant le jour de la semaine pour lequel on souhaite vérifier les disponibilités de l'employé.</param>
+        /// <param name="duree"> Un objet de type TimeSpan représentant la durée pendant laquelle on souhaite vérifier les disponibilités de l'employé.</param>
+        /// <param name="listeHeuresDebut"> Une liste de chaînes de caractères représentant les heures de début des disponibilités de l'employé pour le jour spécifié.</param>
+        /// <param name="listeHeuresFin">Une liste de chaînes de caractères représentant les heures de fin des disponibilités de l'employé pour le jour spécifié.</param>
+        /// <param name="listeJours">Une liste de chaînes de caractères représentant les jours de la semaine pour lesquels l'employé est disponible. </param>
+        /// <returns>Un booléen indiquant si l'employé est disponible pendant la période spécifiée. </returns>
         public bool ComparerDispos(string jour, TimeSpan duree, List<string> listeHeuresDebut, List<string> listeHeuresFin, List<string> listeJours)
         {
             bool verification = false;
@@ -95,9 +104,9 @@ namespace Analyse
         }
 
         /// <summary>
-        /// methode qui retourne un employe en string
+        /// Cette méthode retourne une chaîne de caractères représentant les informations sur l'employé et ses disponibilités.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Une chaîne de caractères représentant les informations sur l'employé et ses disponibilités.</returns>
         override public string ToString()
         {
             List<string> disposList = new List<string>();
@@ -114,10 +123,10 @@ namespace Analyse
         }
 
         /// <summary>
-        /// methode qui compare 2 employe a laide du nom
+        /// Cette méthode compare le nom de l'employé avec un nom spécifié et retourne une valeur booléenne indiquant si les noms correspondent.
         /// </summary>
-        /// <param name="nom"></param>
-        /// <returns></returns>
+        /// <param name="nom"> Une chaîne de caractères représentant le nom à comparer avec le nom de l'employé </param>
+        /// <returns>Un booléen indiquant si les noms correspondent. </returns>
         public bool ComparerEmploye(string nom)
         {
             if(nom == this.Nom) return true;
@@ -125,3 +134,4 @@ namespace Analyse
         }
     }
 }
+

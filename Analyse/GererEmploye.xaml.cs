@@ -56,8 +56,37 @@ namespace Analyse
 
         private void BtnAjouter_Click(object sender, RoutedEventArgs e)
         {
-            string nom = txbNom.ToString();
-            TimeOnly hdLundi;
+            //string nom = txbNom.ToString();
+
+
+            int HeureDebutLundi = int.Parse(HDLundi.ToString());
+            int MinuteDebutLundi = int.Parse(MDLundi.ToString());
+            int HeureFinLundi = int.Parse(HFLundi.ToString());
+            int MinuteFinLundi = int.Parse(MFLundi.ToString());
+
+            int HeureDebutMardi = int.Parse(HDMardi.ToString());
+            int MinuteDebutMardi = int.Parse(MDMardi.ToString());
+            int HeureFinMardi = int.Parse(HFMardi.ToString());
+            int MinuteFinMardi = int.Parse(MFMardi.ToString());
+
+            int HeureDebutMercredi = int.Parse(HDMercredi.ToString());
+            int MinuteDebutMercredi = int.Parse(MDMercredi.ToString());
+            int HeureFinMercredi = int.Parse(HFMercredi.ToString());
+            int MinuteFinMercredi = int.Parse(MFMercredi.ToString());
+
+            int HeureDebutJeudi = int.Parse(HDJeudi.ToString());
+            int MinuteDebutJeudi = int.Parse(MDJeudi.ToString());
+            int HeureFinJeudi = int.Parse(HFJeudi.ToString());
+            int MinuteFinJeudi = int.Parse(MFJeudi.ToString());
+
+            int HeureDebutVendredi = int.Parse(HDVendredi.ToString());
+            int MinuteDebutVendredi = int.Parse(MDVendredi.ToString());
+            int HeureFinVendredi = int.Parse(HFVendredi.ToString());
+            int MinuteFinVendredi = int.Parse(MFVendredi.ToString());
+
+            //------------verifier si lemployer existe
+
+
         }
 
 
