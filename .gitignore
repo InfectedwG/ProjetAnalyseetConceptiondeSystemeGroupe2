@@ -191,9 +191,8 @@ StyleCop.Cache
 bin
 obj
 
-vs/
+.vs/
+ProjetAnalyseetConceptiondeSystemeGroupe2/.vs
 bin/
 obj/
-.vs/SolutionAnalyse/FileContentIndex/8d2a7951-2f97-4f52-9ff8-23e18a3cf2c3.vsidx
-.vs/SolutionAnalyse/FileContentIndex/c7f0ffc1-0d4b-4161-9537-15845792c773.vsidx
-.vs/SolutionAnalyse/FileContentIndex/f3441d80-d598-4fe4-afd6-e136fcf3d783.vsidx
+
