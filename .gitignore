@@ -193,6 +193,6 @@ obj
 
 .vs/
 ProjetAnalyseetConceptiondeSystemeGroupe2/.vs
-bin/
-obj/
+ProjetAnalyseetConceptiondeSystemeGroupe2/Analyse/bin/
+ProjetAnalyseetConceptiondeSystemeGroupe2/Analyse/obj/
 

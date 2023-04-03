@@ -57,9 +57,28 @@ namespace Analyse
 
         private void BtnAjouter_Click(object sender, RoutedEventArgs e)
         {
-            //string nom = txbNom.ToString();
+            /*
+            string nom = txbNom.ToString();
+            //------------verifier si lemployer existe
+            foreach (var emp in model.Employes)
+            {
+                if (emp.ComparerEmploye(nom))
+                {
+                    MessageBox.Show("L'employer existe deja!");
+                    txbNom.Clear();
+                }
+            }
+            */
 
+            //-----------verifier les dispos
 
+            ComboBoxItem temp = 
+            string test = 
+            string test2 = $"test + {test}";
+
+            MessageBox.Show(test2, "Resultat : ");
+
+            /*
             int HeureDebutLundi = int.Parse(HDLundi.ToString());
             int MinuteDebutLundi = int.Parse(MDLundi.ToString());
             int HeureFinLundi = int.Parse(HFLundi.ToString());
@@ -84,9 +103,10 @@ namespace Analyse
             int MinuteDebutVendredi = int.Parse(MDVendredi.ToString());
             int HeureFinVendredi = int.Parse(HFVendredi.ToString());
             int MinuteFinVendredi = int.Parse(MFVendredi.ToString());
+            */
+            
 
-            //------------verifier si lemployer existe
-
+            
 
         }
 

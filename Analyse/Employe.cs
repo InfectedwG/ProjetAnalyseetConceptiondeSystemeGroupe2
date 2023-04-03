@@ -132,6 +132,8 @@ namespace Analyse
             if(nom == this.Nom) return true;
             else return false;
         }
+
+        
     }
 }
 

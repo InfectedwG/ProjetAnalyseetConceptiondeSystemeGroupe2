@@ -75,7 +75,7 @@
                Grid.Row="2" FontFamily="Segoe UI Black"/>
 
 
-        <TextBox x:Name="idnom" 
+        <TextBox x:Name="txbNom" 
                  HorizontalAlignment="Left" 
                  Margin="55,0,0,0" 
                  Grid.Row="1"
