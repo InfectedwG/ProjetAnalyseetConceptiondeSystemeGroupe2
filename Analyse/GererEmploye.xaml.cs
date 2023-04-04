@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -57,56 +58,73 @@ namespace Analyse
 
         private void BtnAjouter_Click(object sender, RoutedEventArgs e)
         {
-            /*
-            string nom = txbNom.ToString();
+            
+            string nom = txbNom.Text;
             //------------verifier si lemployer existe
+            
+            
+
+            ComboBoxItem [,] tabItems = { 
+                { (ComboBoxItem)HDLundi.SelectedItem, (ComboBoxItem)HFLundi.SelectedItem, (ComboBoxItem)MDLundi.SelectedItem, (ComboBoxItem)MFLundi.SelectedItem }, 
+                { (ComboBoxItem)HDMardi.SelectedItem, (ComboBoxItem)HFMardi.SelectedItem, (ComboBoxItem)MDMardi.SelectedItem, (ComboBoxItem)MFMardi.SelectedItem }, 
+                { (ComboBoxItem)HDMercredi.SelectedItem, (ComboBoxItem)HFMercredi.SelectedItem, (ComboBoxItem)MDMercredi.SelectedItem, (ComboBoxItem)MFMercredi.SelectedItem }, 
+                { (ComboBoxItem)HDJeudi.SelectedItem, (ComboBoxItem)HFJeudi.SelectedItem, (ComboBoxItem)MDJeudi.SelectedItem, (ComboBoxItem)MFJeudi.SelectedItem }, 
+                { (ComboBoxItem)HDVendredi.SelectedItem, (ComboBoxItem)HFVendredi.SelectedItem, (ComboBoxItem)MDVendredi.SelectedItem, (ComboBoxItem)MFVendredi.SelectedItem } 
+            };
+
+            string[,] tabString = new string[5, 4];
+            string[] tabJours = { "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi" };
+            List<Disponibilite> listeDispos = new List<Disponibilite>();
+
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    tabString[i,j] = tabItems[i,j].Content.ToString();
+                }
+            }
+
+
+            //-----------verifier les dispos
+
+            for (int i = 0; i < 5; i++)
+            {
+                Disponibilite temp;
+                if (tabString[i,0] != "N/A" && tabString[i, 1] != "N/A" && tabString[i, 2] != "N/A" && tabString[i, 3] != "N/A")
+                {
+                    TimeOnly debut = new TimeOnly(int.Parse(tabString[i, 0]), int.Parse(tabString[i, 2]));
+                    TimeOnly fin = new TimeOnly(int.Parse(tabString[i, 1]), int.Parse(tabString[i, 3]));
+
+
+                    temp = new Disponibilite(debut, fin, tabJours[i]);
+                    listeDispos.Add(temp);
+                }               
+                
+            }
+            Employe employe;
+            bool autorisation = true;   
+
             foreach (var emp in model.Employes)
             {
                 if (emp.ComparerEmploye(nom))
                 {
-                    MessageBox.Show("L'employer existe deja!");
-                    txbNom.Clear();
+                    MessageBox.Show("L'employer existant!", "Attention");
+                    autorisation = false;
+                    break;
                 }
+                
             }
-            */
-
-            //-----------verifier les dispos
-
-            //ComboBoxItem temp = 
-            //string test = 
-            //string test2 = $"test + {test}";
-
-            //MessageBox.Show(test2, "Resultat : ");
-
-            /*
-            int HeureDebutLundi = int.Parse(HDLundi.ToString());
-            int MinuteDebutLundi = int.Parse(MDLundi.ToString());
-            int HeureFinLundi = int.Parse(HFLundi.ToString());
-            int MinuteFinLundi = int.Parse(MFLundi.ToString());
-
-            int HeureDebutMardi = int.Parse(HDMardi.ToString());
-            int MinuteDebutMardi = int.Parse(MDMardi.ToString());
-            int HeureFinMardi = int.Parse(HFMardi.ToString());
-            int MinuteFinMardi = int.Parse(MFMardi.ToString());
-
-            int HeureDebutMercredi = int.Parse(HDMercredi.ToString());
-            int MinuteDebutMercredi = int.Parse(MDMercredi.ToString());
-            int HeureFinMercredi = int.Parse(HFMercredi.ToString());
-            int MinuteFinMercredi = int.Parse(MFMercredi.ToString());
-
-            int HeureDebutJeudi = int.Parse(HDJeudi.ToString());
-            int MinuteDebutJeudi = int.Parse(MDJeudi.ToString());
-            int HeureFinJeudi = int.Parse(HFJeudi.ToString());
-            int MinuteFinJeudi = int.Parse(MFJeudi.ToString());
-
-            int HeureDebutVendredi = int.Parse(HDVendredi.ToString());
-            int MinuteDebutVendredi = int.Parse(MDVendredi.ToString());
-            int HeureFinVendredi = int.Parse(HFVendredi.ToString());
-            int MinuteFinVendredi = int.Parse(MFVendredi.ToString());
-            */
-            
+            if (autorisation)
+            {
+                employe = new Employe(nom, listeDispos);
+                model.AjoutEmployeDB(employe);
+                MessageBox.Show("Ajout fait avec succes!", "Attention");
+            }
 
             
+
+
+
 
         }
 
