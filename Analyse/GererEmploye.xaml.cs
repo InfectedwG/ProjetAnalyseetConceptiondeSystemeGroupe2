@@ -138,33 +138,21 @@ namespace Analyse
         /// <param name="e">Arguments de l'événement.</param>
         private void BtnSupprimer_Click(object sender, RoutedEventArgs e)
         {
-            /*
-            string nom = idnom.Text;
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
 
-                // Créer une commande SQL pour supprimer les données de la table appropriée
-                string query = "DELETE FROM VotreTable WHERE Nom=@Nom";
-                SqlCommand command = new SqlCommand(query, connection);
+            string nomEmploye = txbNom.Text;
 
-                // Ajouter les paramètres à la commande SQL
-                command.Parameters.AddWithValue("@Nom", nom);
-
-                // Exécuter la commande SQL
-                int rowsAffected = command.ExecuteNonQuery();
-                if (rowsAffected > 0)
+                bool confirmation = model.SupprimerEmployeDB(nomEmploye);
+                if (confirmation)
                 {
-                    MessageBox.Show("Employé supprimé avec succès.");
+                    MessageBox.Show("L'employé a été supprimé avec succès.");
                 }
                 else
                 {
-                    MessageBox.Show("Aucun employé trouvé avec ce nom.");
+                    MessageBox.Show("Impossible de supprimer l'employé.");
                 }
             }
-            */
         }
 
     }
-    }
+ 
