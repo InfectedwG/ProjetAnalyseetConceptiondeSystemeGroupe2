@@ -22,7 +22,7 @@ namespace Analyse
     /// </summary>
     public partial class GererEmploye : Window
     {
-       private string connectionString = "Data Source=SERVER_NAME;Initial Catalog=DATABASE_NAME;User ID=USER_ID;Password=PASSWORD;";
+        private string connectionString = "Data Source=SERVER_NAME;Initial Catalog=DATABASE_NAME;User ID=USER_ID;Password=PASSWORD;";
         private MainWindow model;
 
         /// <summary> 
@@ -33,14 +33,14 @@ namespace Analyse
         {
             InitializeComponent();
             this.model = model;
-           
+
         }
 
         /// <summary>
         /// Cette méthode gère l'événement click du bouton "Retour".
         /// Elle ferme la fenêtre actuelle et ouvre la fenêtre principale.
         /// </summary>
-         ///<param name="sender">Objet qui a déclenché l'événement.</param>
+        ///<param name="sender">Objet qui a déclenché l'événement.</param>
         /// <param name="e">Arguments de l'événement.</param>
         private void BtnRetour_Click(object sender, RoutedEventArgs e)
         {
@@ -58,18 +58,18 @@ namespace Analyse
 
         private void BtnAjouter_Click(object sender, RoutedEventArgs e)
         {
-            
+
             string nom = txbNom.Text;
             //------------verifier si lemployer existe
-            
-            
 
-            ComboBoxItem [,] tabItems = { 
-                { (ComboBoxItem)HDLundi.SelectedItem, (ComboBoxItem)HFLundi.SelectedItem, (ComboBoxItem)MDLundi.SelectedItem, (ComboBoxItem)MFLundi.SelectedItem }, 
-                { (ComboBoxItem)HDMardi.SelectedItem, (ComboBoxItem)HFMardi.SelectedItem, (ComboBoxItem)MDMardi.SelectedItem, (ComboBoxItem)MFMardi.SelectedItem }, 
-                { (ComboBoxItem)HDMercredi.SelectedItem, (ComboBoxItem)HFMercredi.SelectedItem, (ComboBoxItem)MDMercredi.SelectedItem, (ComboBoxItem)MFMercredi.SelectedItem }, 
-                { (ComboBoxItem)HDJeudi.SelectedItem, (ComboBoxItem)HFJeudi.SelectedItem, (ComboBoxItem)MDJeudi.SelectedItem, (ComboBoxItem)MFJeudi.SelectedItem }, 
-                { (ComboBoxItem)HDVendredi.SelectedItem, (ComboBoxItem)HFVendredi.SelectedItem, (ComboBoxItem)MDVendredi.SelectedItem, (ComboBoxItem)MFVendredi.SelectedItem } 
+
+
+            ComboBoxItem[,] tabItems = {
+                { (ComboBoxItem)HDLundi.SelectedItem, (ComboBoxItem)HFLundi.SelectedItem, (ComboBoxItem)MDLundi.SelectedItem, (ComboBoxItem)MFLundi.SelectedItem },
+                { (ComboBoxItem)HDMardi.SelectedItem, (ComboBoxItem)HFMardi.SelectedItem, (ComboBoxItem)MDMardi.SelectedItem, (ComboBoxItem)MFMardi.SelectedItem },
+                { (ComboBoxItem)HDMercredi.SelectedItem, (ComboBoxItem)HFMercredi.SelectedItem, (ComboBoxItem)MDMercredi.SelectedItem, (ComboBoxItem)MFMercredi.SelectedItem },
+                { (ComboBoxItem)HDJeudi.SelectedItem, (ComboBoxItem)HFJeudi.SelectedItem, (ComboBoxItem)MDJeudi.SelectedItem, (ComboBoxItem)MFJeudi.SelectedItem },
+                { (ComboBoxItem)HDVendredi.SelectedItem, (ComboBoxItem)HFVendredi.SelectedItem, (ComboBoxItem)MDVendredi.SelectedItem, (ComboBoxItem)MFVendredi.SelectedItem }
             };
 
             string[,] tabString = new string[5, 4];
@@ -80,7 +80,7 @@ namespace Analyse
             {
                 for (int j = 0; j < 4; j++)
                 {
-                    tabString[i,j] = tabItems[i,j].Content.ToString();
+                    tabString[i, j] = tabItems[i, j].Content.ToString();
                 }
             }
 
@@ -90,7 +90,7 @@ namespace Analyse
             for (int i = 0; i < 5; i++)
             {
                 Disponibilite temp;
-                if (tabString[i,0] != "N/A" && tabString[i, 1] != "N/A" && tabString[i, 2] != "N/A" && tabString[i, 3] != "N/A")
+                if (tabString[i, 0] != "N/A" && tabString[i, 1] != "N/A" && tabString[i, 2] != "N/A" && tabString[i, 3] != "N/A")
                 {
                     TimeOnly debut = new TimeOnly(int.Parse(tabString[i, 0]), int.Parse(tabString[i, 2]));
                     TimeOnly fin = new TimeOnly(int.Parse(tabString[i, 1]), int.Parse(tabString[i, 3]));
@@ -98,11 +98,11 @@ namespace Analyse
 
                     temp = new Disponibilite(debut, fin, tabJours[i]);
                     listeDispos.Add(temp);
-                }               
-                
+                }
+
             }
             Employe employe;
-            bool autorisation = true;   
+            bool autorisation = true;
 
             foreach (var emp in model.Employes)
             {
@@ -112,16 +112,17 @@ namespace Analyse
                     autorisation = false;
                     break;
                 }
-                
+
             }
             if (autorisation)
             {
                 employe = new Employe(nom, listeDispos);
                 model.AjoutEmployeDB(employe);
+                model.Employes.Add(employe);
                 MessageBox.Show("Ajout fait avec succes!", "Attention");
             }
 
-            
+
 
 
 
@@ -138,21 +139,36 @@ namespace Analyse
         /// <param name="e">Arguments de l'événement.</param>
         private void BtnSupprimer_Click(object sender, RoutedEventArgs e)
         {
-
-
             string nomEmploye = txbNom.Text;
+            bool confirmation = false;
 
-                bool confirmation = model.SupprimerEmployeDB(nomEmploye);
-                if (confirmation)
+            foreach (var emp in model.Employes)
+            {
+                
+                if (emp.ComparerEmploye(nomEmploye))
                 {
-                    MessageBox.Show("L'employé a été supprimé avec succès.");
+                    
+
+                    confirmation = model.SupprimerEmployeDB(nomEmploye);
+                    if (confirmation)
+                    {
+                        MessageBox.Show("L'employé a été supprimé avec succès.");
+                    }
+                    
+                    model.Employes.Remove(emp);
                 }
-                else
-                {
-                    MessageBox.Show("Impossible de supprimer l'employé.");
-                }
+                
+
             }
+            if (!confirmation)
+            {
+                MessageBox.Show("Impossible de supprimer l'employé.");
+            }
+
+
         }
 
     }
+
+}
  
