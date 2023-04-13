@@ -231,7 +231,7 @@ namespace Analyse
         /// <returns>
         /// retourne un tableau avec le ou les employes et ses dispos
         /// </returns>
-        public string[,] RechercheEmploye(List<string> listeNoms, string jour, TimeSpan duree)
+        public DataTable RechercheEmploye(List<string> listeNoms, string jour, TimeSpan duree)
         {
             List<string> resultatsNoms = new List<string>();
             List<string> resultatsJours = new List<string>();
@@ -244,38 +244,42 @@ namespace Analyse
                 foreach (var emp in Employes)
                 {
                     if (emp.ComparerEmploye(nom))
-                    {
-                        resultatsNoms.Add(nom);
+                    {                        
                         emp.ComparerDispos(jour, duree, resultatsHeuresDebut, resultatsHeuresFin, resultatsJours);
+                        for (int i = 0; i < resultatsJours.Count(); i++)
+                        {
+                            resultatsNoms.Add(nom);
+                        }
                     }
                 }
             }
 
-            string[,] resultats = new string[resultatsJours.Count(), 4];
+            
+            DataTable resultat = new DataTable();
+
+            
+            resultat.Columns.Add("Nom", typeof(string));
+            resultat.Columns.Add("Jour", typeof(string));
+            resultat.Columns.Add("HeureDebut", typeof(string));
+            resultat.Columns.Add("HeureFin", typeof(string));
 
 
-            for (int i = 0; i < resultatsNoms.Count(); i++)
-            {
-                int j = 0;
-                resultats[i, j] = resultatsNoms.ElementAt(i);
-            }
+
+
+            // Add data to DataTable
             for (int i = 0; i < resultatsJours.Count(); i++)
             {
-                int j = 1;
-                resultats[i, j] = resultatsJours.ElementAt(i);
-            }
-            for (int i = 0; i < resultatsHeuresDebut.Count(); i++)
-            {
-                int j = 2;
-                resultats[i, j] = resultatsHeuresDebut.ElementAt(i);
-            }
-            for (int i = 0; i < resultatsHeuresFin.Count(); i++)
-            {
-                int j = 3;
-                resultats[i, j] = resultatsHeuresFin.ElementAt(i);
+                var newRow = resultat.NewRow();
+                newRow[0] = resultatsNoms[i];
+                newRow[1] = resultatsJours[i];
+                newRow[2] = resultatsHeuresDebut[i];
+                newRow[3] = resultatsHeuresFin[i];                
+
+                resultat.Rows.Add(newRow);
+                
             }
 
-            return resultats;
+            return resultat;
 
 
 
