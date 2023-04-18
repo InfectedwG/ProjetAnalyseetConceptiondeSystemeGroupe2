@@ -109,7 +109,7 @@ namespace Analyse
                 
 
 
-                dgResultatRecherche.ItemsSource = resultatRecherche.DefaultView;
+                this.dgResultatRecherche.ItemsSource = resultatRecherche.DefaultView;
             }
         }
 

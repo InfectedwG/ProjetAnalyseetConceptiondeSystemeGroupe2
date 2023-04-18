@@ -13,7 +13,7 @@ namespace Analyse
     {
         private TimeOnly heureDebut;
         private TimeOnly heureFin;
-        private string jour;
+        private string? jour;
 
         /// <summary>
         /// Obtient ou définit l'heure de début de la disponibilité.
@@ -42,13 +42,20 @@ namespace Analyse
             set { jour = value; }
         }
 
+        public Disponibilite()
+        {
+            HeureDebut = new TimeOnly();
+            HeureFin = new TimeOnly();
+            Jour = string.Empty;
+        }
+
         /// <summary>
         /// Initialise une nouvelle instance de la classe Disponibilite avec les valeurs spécifiées.
         /// </summary>
         /// <param name="heureDebut">L'heure de début de la disponibilité.</param>
         /// <param name="heureFin">L'heure de fin de la disponibilité.</param>
         /// <param name="jour">Le jour de la disponibilité.</param>
-        
+
         public Disponibilite(TimeOnly heureDebut, TimeOnly heureFin, string jour)
         {
             HeureDebut = heureDebut;
@@ -68,6 +75,21 @@ namespace Analyse
 
             if (dureeDispo >= dureeCheck && this.Jour == jour) return true;
             else return false;
+        }
+        public bool VerifOverlap(Disponibilite dispo)
+        {
+            return this.HeureDebut <= dispo.HeureFin && dispo.HeureDebut <= this.HeureFin && this.Jour == dispo.Jour;
+        }
+
+        public Disponibilite GetOverlap(Disponibilite dispo)
+        {
+            Disponibilite resultat = new Disponibilite();
+
+            resultat.Jour = this.Jour;
+            resultat.HeureDebut = this.HeureDebut > dispo.HeureDebut ? this.HeureDebut : dispo.HeureDebut;
+            resultat.HeureFin = this.HeureFin < dispo.HeureFin ? this.HeureFin : dispo.HeureFin;
+
+            return resultat;
         }
 
         /// <summary>

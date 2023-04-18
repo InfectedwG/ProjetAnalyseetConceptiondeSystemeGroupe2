@@ -234,9 +234,8 @@ namespace Analyse
         public DataTable RechercheEmploye(List<string> listeNoms, string jour, TimeSpan duree)
         {
             List<string> resultatsNoms = new List<string>();
-            List<string> resultatsJours = new List<string>();
-            List<string> resultatsHeuresDebut = new List<string>();
-            List<string> resultatsHeuresFin = new List<string>();
+
+            List<Disponibilite> dispos = new List<Disponibilite>();
 
 
             foreach (var nom in listeNoms)
@@ -244,9 +243,9 @@ namespace Analyse
                 foreach (var emp in Employes)
                 {
                     if (emp.ComparerEmploye(nom))
-                    {                        
-                        emp.ComparerDispos(jour, duree, resultatsHeuresDebut, resultatsHeuresFin, resultatsJours);
-                        for (int i = 0; i < resultatsJours.Count(); i++)
+                    {
+                        emp.ComparerDispos(jour, duree, dispos);
+                        for (int i = 0; i < dispos.Count(); i++)
                         {
                             resultatsNoms.Add(nom);
                         }
@@ -254,38 +253,38 @@ namespace Analyse
                 }
             }
 
-            
+            for (int i = 0; i < resultatsNoms.Count(); i++)
+            {
+                for (int j = 0; j < resultatsNoms.Count(); j++)
+                {
+                    if (resultatsNoms[i] != resultatsNoms[j] && dispos[i].VerifOverlap(dispos[j]))
+                    {
+                        dispos.Add(dispos[i].GetOverlap(dispos[j]));
+                        resultatsNoms.Add($"{resultatsNoms[i]} et {resultatsNoms[j]}");
+                    }
+                }
+            }
+
             DataTable resultat = new DataTable();
 
-            
             resultat.Columns.Add("Nom", typeof(string));
             resultat.Columns.Add("Jour", typeof(string));
             resultat.Columns.Add("HeureDebut", typeof(string));
             resultat.Columns.Add("HeureFin", typeof(string));
 
-
-
-
             // Add data to DataTable
-            for (int i = 0; i < resultatsJours.Count(); i++)
+            for (int i = 0; i < dispos.Count(); i++)
             {
                 var newRow = resultat.NewRow();
                 newRow[0] = resultatsNoms[i];
-                newRow[1] = resultatsJours[i];
-                newRow[2] = resultatsHeuresDebut[i];
-                newRow[3] = resultatsHeuresFin[i];                
+                newRow[1] = dispos[i].Jour;
+                newRow[2] = dispos[i].HeureDebut.ToString();
+                newRow[3] = dispos[i].HeureFin.ToString();
 
                 resultat.Rows.Add(newRow);
-                
             }
 
             return resultat;
-
-
-
-
-
-
         }
 
 
