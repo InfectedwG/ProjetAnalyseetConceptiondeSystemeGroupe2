@@ -43,6 +43,7 @@ namespace Analyse
             InitializeComponent();
             Employes = GetEmployesDB();
         }
+        
 
         /// <summary>
         /// retourne l'id d'un employe de la bas de donnees
@@ -260,14 +261,7 @@ namespace Analyse
             {
                 foreach (var emp in Employes)
                 {
-                    if (emp.ComparerEmploye(nom))
-                    {
-                        emp.ComparerDispos(jour, duree, dispos);
-                        for (int i = 0; i < dispos.Count(); i++)
-                        {
-                            resultatsNoms.Add(nom);
-                        }
-                    }
+                    if (emp.ComparerEmploye(nom)) emp.ComparerDispos(jour, duree, dispos, resultatsNoms);
                 }
             }
 

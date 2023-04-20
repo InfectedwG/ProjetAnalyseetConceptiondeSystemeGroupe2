@@ -85,7 +85,7 @@ namespace Analyse
         /// <param name="listeHeuresFin">Une liste de chaînes de caractères représentant les heures de fin des disponibilités de l'employé pour le jour spécifié.</param>
         /// <param name="listeJours">Une liste de chaînes de caractères représentant les jours de la semaine pour lesquels l'employé est disponible. </param>
         /// <returns>Un booléen indiquant si l'employé est disponible pendant la période spécifiée. </returns>
-        public void ComparerDispos(string jour, TimeSpan duree, List<Disponibilite> resultatsDispos)
+        public void ComparerDispos(string jour, TimeSpan duree, List<Disponibilite> resultatsDispos, List<string> noms)
         {
             foreach (Disponibilite dispo in this.Disponibilites)
             {
@@ -93,6 +93,7 @@ namespace Analyse
                 {
                     Disponibilite resultat = new Disponibilite(dispo.HeureDebut, dispo.HeureFin, dispo.Jour);
                     resultatsDispos.Add(resultat);
+                    noms.Add(this.Nom);
                 }
             }
         }
