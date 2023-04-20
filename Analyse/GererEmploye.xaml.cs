@@ -147,7 +147,6 @@ namespace Analyse
                 
                 if (emp.ComparerEmploye(nomEmploye))
                 {
-                    
 
                     confirmation = model.SupprimerEmployeDB(nomEmploye);
                     if (confirmation)

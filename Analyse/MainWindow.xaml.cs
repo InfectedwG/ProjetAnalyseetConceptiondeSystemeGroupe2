@@ -134,7 +134,6 @@ namespace Analyse
                 connexion.Close();
 
                 Employe employe = new Employe(nom, dispos);
-                //Console.WriteLine(employe.ToString());
 
                 employes.Add(employe);
                 
@@ -253,9 +252,11 @@ namespace Analyse
                 }
             }
 
-            for (int i = 0; i < resultatsNoms.Count(); i++)
+            int length = dispos.Count();
+
+            for (int i = 0; i < length; i++)
             {
-                for (int j = 0; j < resultatsNoms.Count(); j++)
+                for (int j = 0; j < length; j++)
                 {
                     if (resultatsNoms[i] != resultatsNoms[j] && dispos[i].VerifOverlap(dispos[j]))
                     {
