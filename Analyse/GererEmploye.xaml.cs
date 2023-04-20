@@ -140,26 +140,14 @@ namespace Analyse
         private void BtnSupprimer_Click(object sender, RoutedEventArgs e)
         {
             string nomEmploye = txbNom.Text;
-            bool confirmation = false;
+            bool confirmation = model.SupprimerEmployeLocal(nomEmploye);
 
-            foreach (var emp in model.Employes)
+
+            if (confirmation)
             {
-                
-                if (emp.ComparerEmploye(nomEmploye))
-                {
-
-                    confirmation = model.SupprimerEmployeDB(nomEmploye);
-                    if (confirmation)
-                    {
-                        MessageBox.Show("L'employé a été supprimé avec succès.");
-                    }
-                    
-                    model.Employes.Remove(emp);
-                }
-                
-
+                MessageBox.Show("L'employé a été supprimé avec succès.");
             }
-            if (!confirmation)
+            else
             {
                 MessageBox.Show("Impossible de supprimer l'employé.");
             }

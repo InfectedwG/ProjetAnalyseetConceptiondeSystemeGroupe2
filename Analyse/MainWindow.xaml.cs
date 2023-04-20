@@ -221,6 +221,25 @@ namespace Analyse
             return confirmation;
         }
 
+        public bool SupprimerEmployeLocal(string nomEmploye)
+        {
+            bool confirmation = false;
+            foreach (var emp in Employes)
+            {
+
+                if (emp.ComparerEmploye(nomEmploye))
+                {
+
+                    confirmation = SupprimerEmployeDB(nomEmploye);
+                    
+
+                    Employes.Remove(emp);
+                }
+            }
+
+            return confirmation;
+        }
+
         /// <summary>
         /// recherche un employe dans la liste d'emplye
         /// </summary>
@@ -316,5 +335,7 @@ namespace Analyse
             recherche.Show();
             
         }
+
+
     }
 }
