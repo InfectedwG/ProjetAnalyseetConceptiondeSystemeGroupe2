@@ -22,8 +22,7 @@ namespace Analyse
     /// </summary>
     public partial class GererEmploye : Window
     {
-        private string connectionString = "Data Source=SERVER_NAME;Initial Catalog=DATABASE_NAME;User ID=USER_ID;Password=PASSWORD;";
-        private MainWindow model;
+        public MainWindow Model;
 
         /// <summary> 
         /// Initialise une nouvelle instance de la classe <see cref="GererEmploye"/> 
@@ -32,8 +31,7 @@ namespace Analyse
         public GererEmploye(MainWindow model)
         {
             InitializeComponent();
-            this.model = model;
-
+            Model = model;
         }
 
         /// <summary>
@@ -45,8 +43,7 @@ namespace Analyse
         private void BtnRetour_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
+            Model.Show();
         }
 
         /// <summary>
@@ -55,15 +52,12 @@ namespace Analyse
         /// </summary>
         ///<param name="sender">Objet qui a déclenché l'événement.</param>
         /// <param name="e">Arguments de l'événement.</param>
-
         private void BtnAjouter_Click(object sender, RoutedEventArgs e)
         {
 
             string nom = txbNom.Text;
+
             //------------verifier si lemployer existe
-
-
-
             ComboBoxItem[,] tabItems = {
                 { (ComboBoxItem)HDLundi.SelectedItem, (ComboBoxItem)HFLundi.SelectedItem, (ComboBoxItem)MDLundi.SelectedItem, (ComboBoxItem)MFLundi.SelectedItem },
                 { (ComboBoxItem)HDMardi.SelectedItem, (ComboBoxItem)HFMardi.SelectedItem, (ComboBoxItem)MDMardi.SelectedItem, (ComboBoxItem)MFMardi.SelectedItem },
@@ -86,7 +80,6 @@ namespace Analyse
 
 
             //-----------verifier les dispos
-
             for (int i = 0; i < 5; i++)
             {
                 Disponibilite temp;
@@ -102,25 +95,16 @@ namespace Analyse
 
             }
             Employe employe;
-            bool autorisation = true;
+            bool autorisation = MainWindow.AutorisationInsertion(nom);
 
-            foreach (var emp in model.Employes)
-            {
-                if (emp.ComparerEmploye(nom))
-                {
-                    MessageBox.Show("L'employer existant!", "Attention");
-                    autorisation = false;
-                    break;
-                }
-
-            }
             if (autorisation)
             {
                 employe = new Employe(nom, listeDispos);
-                model.AjoutEmployeDB(employe);
-                model.Employes.Add(employe);
+                MainWindow.AjoutEmployeDB(employe);
+                MainWindow.Employes.Add(employe);
                 MessageBox.Show("Ajout fait avec succes!", "Attention");
             }
+            else MessageBox.Show("L'employer existant!", "Attention");
 
 
 
@@ -140,7 +124,7 @@ namespace Analyse
         private void BtnSupprimer_Click(object sender, RoutedEventArgs e)
         {
             string nomEmploye = txbNom.Text;
-            bool confirmation = model.SupprimerEmployeLocal(nomEmploye);
+            bool confirmation = MainWindow.SupprimerEmployeLocal(nomEmploye);
 
 
             if (confirmation)

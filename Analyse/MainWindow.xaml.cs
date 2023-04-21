@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Data;
+using System.Net;
 
 namespace Analyse
 {
@@ -22,28 +23,24 @@ namespace Analyse
     /// </summary>
     public partial class MainWindow : Window
     {
-        private SqlConnection connexion = new SqlConnection(@"Data Source=Brazo-PC\SQLEXPRESS02;Initial Catalog=GestionDispoEmploye;Integrated Security=True");
-        private List<Employe> employes;
+        private static SqlConnection connexion = new SqlConnection(@"Data Source=Brazo-PC\SQLEXPRESS02;Initial Catalog=GestionDispoEmploye;Integrated Security=True");
+        private static List<Employe> employes;
 
-        /// <summary>
-        /// methode qui gere le getteur et accesseur de la liste demploye
-        /// </summary>
-        public List<Employe> Employes
+        public static List<Employe> Employes
         {
-            get { return employes; }
+            get { return GetEmployesDB(); }
             set { employes = value; }
         }
-
         /// <summary>
         /// constructeur du model mainwindow. 
-        /// va chercher la liste demplye dans la base de donnees
+        /// va chercher la liste demploye dans la base de donnees
         /// </summary>
         public MainWindow()
         {
             InitializeComponent();
             Employes = GetEmployesDB();
         }
-        
+
 
         /// <summary>
         /// retourne l'id d'un employe de la bas de donnees
@@ -52,7 +49,7 @@ namespace Analyse
         /// <returns>
         /// ID
         /// </returns>
-        public int getIdEmployeDB(string nom)
+        public static int getIdEmployeDB(string nom)
         {
             int id;
             string requete = "select id from Employe where nom = @nom";
@@ -74,9 +71,9 @@ namespace Analyse
         /// <returns>
         /// liste d'employe
         /// </returns>
-        public List<Employe> GetEmployesDB()
+        public static List<Employe> GetEmployesDB()
         {
-            
+
 
             string requeteEmploye = "select * from Employe";
             List<Employe> employes = new List<Employe>();
@@ -112,12 +109,12 @@ namespace Analyse
                 //getDispo.CommandType = CommandType.Text;
 
                 getDispo.Parameters.AddWithValue("@index", index);
-                
+
 
                 connexion.Open();
 
                 SqlDataReader dr1 = getDispo.ExecuteReader();
-                
+
                 while (dr1.Read())
                 {
                     var donnee_heure_debut = dr1.GetTimeSpan(0);
@@ -137,7 +134,7 @@ namespace Analyse
                 Employe employe = new Employe(nom, dispos);
 
                 employes.Add(employe);
-                
+
             }
             return employes;
 
@@ -147,7 +144,7 @@ namespace Analyse
         /// ajoute un employe dans la DB
         /// </summary>
         /// <param name="employe"></param>
-        public void AjoutEmployeDB(Employe employe)
+        public static int AjoutEmployeDB(Employe employe)
         {
             int id_employe;
 
@@ -184,7 +181,25 @@ namespace Analyse
                 connexion.Open();
                 addDispos.ExecuteNonQuery();
                 connexion.Close();
-            }            
+            }
+
+            return id_employe;
+        }
+
+        public static bool AutorisationInsertion(string nom)
+        {
+            bool autorisation = true;
+
+            foreach (var emp in Employes)
+            {
+                if (emp.ComparerEmploye(nom))
+                {                    
+                    autorisation = false;
+                    break;
+                }
+            }
+
+            return autorisation;
         }
 
         /// <summary>
@@ -194,7 +209,7 @@ namespace Analyse
         /// <returns>
         /// confirmation
         /// </returns>
-        public bool SupprimerEmployeDB(string nom)
+        public static bool SupprimerEmployeDB(string nom)
         {
             int id = getIdEmployeDB(nom);
             bool confirmation = true;
@@ -222,7 +237,7 @@ namespace Analyse
             return confirmation;
         }
 
-        public bool SupprimerEmployeLocal(string nomEmploye)
+        public static bool SupprimerEmployeLocal(string nomEmploye)
         {
             bool confirmation = false;
             foreach (var emp in Employes)
@@ -232,7 +247,7 @@ namespace Analyse
                 {
 
                     confirmation = SupprimerEmployeDB(nomEmploye);
-                    
+
 
                     Employes.Remove(emp);
                 }
@@ -250,7 +265,7 @@ namespace Analyse
         /// <returns>
         /// retourne un tableau avec le ou les employes et ses dispos
         /// </returns>
-        public DataTable RechercheEmploye(List<string> listeNoms, string jour, TimeSpan duree)
+        public static DataTable RechercheEmploye(List<string> listeNoms, string jour, TimeSpan duree)
         {
             List<string> resultatsNoms = new List<string>();
 
@@ -269,12 +284,13 @@ namespace Analyse
 
             for (int i = 0; i < length; i++)
             {
-                for (int j = 0; j < length; j++)
+                for (int j = i; j < length; j++)
                 {
                     if (resultatsNoms[i] != resultatsNoms[j] && dispos[i].VerifOverlap(dispos[j]))
                     {
                         dispos.Add(dispos[i].GetOverlap(dispos[j]));
-                        resultatsNoms.Add($"{resultatsNoms[i]} et {resultatsNoms[j]}");
+                        string nom = $"{resultatsNoms[i]} et {resultatsNoms[j]}";
+                        resultatsNoms.Add(nom);
                     }
                 }
             }
@@ -302,7 +318,7 @@ namespace Analyse
         }
 
 
-        
+
 
         /// <summary>
         /// affiche la fenetre gereremplye
@@ -314,7 +330,7 @@ namespace Analyse
             GererEmploye gererEmploye = new GererEmploye(this);
             this.Hide();
             gererEmploye.Show();
-            
+
         }
 
         /// <summary>
@@ -327,7 +343,26 @@ namespace Analyse
             Recherche recherche = new Recherche(this);
             this.Hide();
             recherche.Show();
-            
+        }
+
+        public static bool AreTablesTheSame(DataTable tbl1, DataTable tbl2)
+        {
+            if (tbl1.Rows.Count != tbl2.Rows.Count || tbl1.Columns.Count != tbl2.Columns.Count)
+                return false;
+
+
+            for (int i = 0; i < tbl1.Rows.Count; i++)
+            {
+                for (int c = 0; c < tbl1.Columns.Count; c++)
+                {
+                    if (!Equals(tbl1.Rows[i][c], tbl2.Rows[i][c]))
+                    {
+                        MessageBox.Show($"{tbl1.Rows[i][c]} + {tbl2.Rows[i][c]}");
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
 
 

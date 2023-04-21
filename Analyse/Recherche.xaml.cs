@@ -37,12 +37,11 @@ namespace Analyse
             InitializeComponent();
             Model = model;
             ChargerCbxEmployes();
-            DataContext = resultatRecherche;
         }
 
         public void ChargerCbxEmployes()
         {
-            foreach (var emp in Model.Employes)
+            foreach (var emp in MainWindow.Employes)
             {
                 cbxEmploye.Items.Add(emp.Nom);
             }
@@ -56,11 +55,8 @@ namespace Analyse
         /// <param name="e">Arguments de l'événement.</param>
         private void BtnRetour_Click(object sender, RoutedEventArgs e)
         {
-           
             this.Close();
             Model.Show();
-            
-
         }
 
 
@@ -104,7 +100,7 @@ namespace Analyse
                 int dureeTemp = int.Parse(cbxDuree.SelectedItem.ToString().Substring(0, 2));
                 TimeSpan duree = new TimeSpan(0, dureeTemp, 0);
 
-                resultatRecherche = Model.RechercheEmploye(EmployesRecherche, jour, duree);
+                resultatRecherche = MainWindow.RechercheEmploye(EmployesRecherche, jour, duree);
 
                 page = 0;
 
@@ -145,6 +141,39 @@ namespace Analyse
                     mainGrid.Children.Add(label);
                 }
             }
+            DataTable resultatRecherche = new DataTable();
+            resultatRecherche.Columns.Add("Nom", typeof(string));
+            resultatRecherche.Columns.Add("Jour", typeof(string));
+            resultatRecherche.Columns.Add("HeureDebut", typeof(string));
+            resultatRecherche.Columns.Add("HeureFin", typeof(string));
+
+            
+
+            var row2 = resultatRecherche.NewRow();
+            row2[0] = "Bob Smith";
+            row2[1] = "Mercredi";
+            row2[2] = "10:00";
+            row2[3] = "13:00";
+
+            resultatRecherche.Rows.Add(row2);
+
+            var row1 = resultatRecherche.NewRow();
+            row1[0] = "Jack Davis";
+            row1[1] = "Mercredi";
+            row1[2] = "12:00";
+            row1[3] = "16:00";
+
+            resultatRecherche.Rows.Add(row1);
+
+            var row3 = resultatRecherche.NewRow();
+            row3[0] = "Bob Smith et Jack Davis";
+            row3[1] = "Mercredi";
+            row3[2] = "12:00";
+            row3[3] = "13:00";
+
+            resultatRecherche.Rows.Add(row3);
+
+            MessageBox.Show(MainWindow.AreTablesTheSame(resultats, resultatRecherche).ToString());
         }
 
         private void btnPageDown_Click(object sender, RoutedEventArgs e)
@@ -161,6 +190,7 @@ namespace Analyse
 
         private void btnclear_Click(object sender, RoutedEventArgs e)
         {
+            /*
             resultatRecherche.Clear();
             EmployesRecherche.Clear();
             page = 0;
@@ -179,6 +209,9 @@ namespace Analyse
                     
                 }
             }
+            */
+
+            
         }
     }
 }
