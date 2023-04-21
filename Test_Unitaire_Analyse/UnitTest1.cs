@@ -10,7 +10,9 @@ namespace Test_Unitaire_Analyse
         public void Setup()
         {
         }
-        
+        /// <summary>
+        /// Test la fonction RechercheEmploye lorsque les paramètres de recherche sont valides
+        /// </summary>
         [Test]
         public void Test_RechercheEmployesValide()
         {
@@ -60,7 +62,9 @@ namespace Test_Unitaire_Analyse
             
 
         }
-
+        /// <summary>
+        ///ce  Test la fonction RechercheEmploye lorsque les paramètres de recherche sont invalides
+        /// </summary>
         [Test]
         public void Test_RechercheEmployesInvalide()
         {
@@ -110,7 +114,9 @@ namespace Test_Unitaire_Analyse
 
 
         }
-
+        /// <summary>
+        /// ce test vise à tester l'ajout d'un employé à la base de données en vérifiant que l'employé est bien ajouté, qu'il a le bon ID et que sa disponibilité est correctement enregistrée.
+        /// </summary>
         [Test]
         public void AjoutEmployeDBTest()
         {
@@ -128,7 +134,9 @@ namespace Test_Unitaire_Analyse
             Assert.IsTrue(MainWindow.Employes.Any(e => e.Nom == nom));
             Assert.IsTrue(MainWindow.Employes.Last().Disponibilites.Any(d => d.Jour == "Lundi" && d.HeureDebut == dispo.HeureDebut && d.HeureFin == dispo.HeureFin));
         }
-
+        /// <summary>
+        /// ce test vise à tester la suppression d'un employé de la base de données en vérifiant que la confirmation de suppression est correcte et en testant un cas où l'employé n'existe pas dans la base de données.
+        /// </summary>
         [Test]
         public void TestSupprimerEmployeDB()
         {

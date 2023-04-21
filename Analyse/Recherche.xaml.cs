@@ -59,7 +59,11 @@ namespace Analyse
             Model.Show();
         }
 
-
+        /// <summary>
+        /// vérifie si un employé est sélectionné à partir d'un contrôle ComboBox. Si un employé est sélectionné, il est ajouté à une liste d'employés.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAjouter_Click(object sender, RoutedEventArgs e)
         {
 
@@ -75,6 +79,11 @@ namespace Analyse
             cbxEmploye.SelectedIndex = 0;
         }
 
+        /// <summary>
+        ///  effectue une opération de recherche basée sur l'employé, le jour et la durée sélectionnés. Il affiche ensuite les résultats sur un contrôle de grille.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnRechercher_Click(object sender, RoutedEventArgs e)
         {
             if(EmployesRecherche.Count == 0 && cbxEmploye.SelectedIndex == 0)
@@ -111,7 +120,10 @@ namespace Analyse
 
             }
         }
-
+        /// <summary>
+        /// prend un DataTable comme paramètre et affiche son contenu sur un contrôle de grille.
+        /// </summary>
+        /// <param name="resultats"></param>
         private void AfficherResultats(DataTable resultats)
         {
             int nbRows = 0;
@@ -175,43 +187,27 @@ namespace Analyse
 
             MessageBox.Show(MainWindow.AreTablesTheSame(resultats, resultatRecherche).ToString());
         }
-
+        /// <summary>
+        /// gèrent la pagination des résultats de la recherche en affichant respectivement l'ensemble de résultats précédent ou suivant.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPageDown_Click(object sender, RoutedEventArgs e)
         {
             if (page > 0) page--;
             AfficherResultats(resultatRecherche);
         }
-
+        /// <summary>
+        /// gèrent la pagination des résultats de la recherche en affichant respectivement l'ensemble de résultats précédent ou suivant.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPageUp_Click(object sender, RoutedEventArgs e)
         {            
             if (page < nbPage-1) page++;
             AfficherResultats(resultatRecherche);
         }
-
-        private void btnclear_Click(object sender, RoutedEventArgs e)
-        {
-            /*
-            resultatRecherche.Clear();
-            EmployesRecherche.Clear();
-            page = 0;
-            nbPage = 0;
-            
-
-            for (int i = 9; i < 18; i++)
-            {
-                for (int j = 0; j < 4; j++)
-                {
-                    Label label = new Label();
-                    label.Content = "";
-                    Grid.SetRow(label, i);
-                    Grid.SetColumn(label, j);
-
-                    
-                }
-            }
-            */
-
-            
-        }
+      
+        
     }
 }

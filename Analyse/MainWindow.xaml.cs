@@ -185,7 +185,11 @@ namespace Analyse
 
             return id_employe;
         }
-
+        /// <summary>
+        /// permet l'Autorisation d'entrer un utilisateur 
+        /// </summary>
+        /// <param name="nom"></param>
+        /// <returns></returns>
         public static bool AutorisationInsertion(string nom)
         {
             bool autorisation = true;
@@ -236,7 +240,11 @@ namespace Analyse
             Employes = GetEmployesDB();
             return confirmation;
         }
-
+        /// <summary>
+        /// Nous permet de recuperer le nom pour faire la suppression
+        /// </summary>
+        /// <param name="nomEmploye"></param>
+        /// <returns></returns>
         public static bool SupprimerEmployeLocal(string nomEmploye)
         {
             bool confirmation = false;
