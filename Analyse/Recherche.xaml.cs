@@ -39,6 +39,9 @@ namespace Analyse
             ChargerCbxEmployes();
         }
 
+        /// <summary>
+        /// charge le comboBox de la liste de noms des employes
+        /// </summary>
         public void ChargerCbxEmployes()
         {
             foreach (var emp in MainWindow.Employes)

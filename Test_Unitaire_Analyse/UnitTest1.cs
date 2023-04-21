@@ -129,10 +129,11 @@ namespace Test_Unitaire_Analyse
 
 
             // Assert
-            Assert.That(MainWindow.AutorisationInsertion(nom), Is.EqualTo(true));
             Assert.That(MainWindow.AjoutEmployeDB(employe), Is.EqualTo(MainWindow.getIdEmployeDB(nom)));
             Assert.IsTrue(MainWindow.Employes.Any(e => e.Nom == nom));
             Assert.IsTrue(MainWindow.Employes.Last().Disponibilites.Any(d => d.Jour == "Lundi" && d.HeureDebut == dispo.HeureDebut && d.HeureFin == dispo.HeureFin));
+
+            MainWindow.SupprimerEmployeDB(nom);
         }
         /// <summary>
         /// ce test vise à tester la suppression d'un employé de la base de données en vérifiant que la confirmation de suppression est correcte et en testant un cas où l'employé n'existe pas dans la base de données.
@@ -142,6 +143,9 @@ namespace Test_Unitaire_Analyse
         {
             // Créer un nom d'employé pour le test
             string nom = "John";
+            Employe empTest = new Employe(nom);
+
+            MainWindow.AjoutEmployeDB(empTest);
 
             // Appeler la fonction à tester
             bool confirmation = MainWindow.SupprimerEmployeLocal(nom);

@@ -146,44 +146,50 @@ namespace Analyse
         /// <param name="employe"></param>
         public static int AjoutEmployeDB(Employe employe)
         {
-            int id_employe;
-
-            string requeteEmploye = "insert into Employe values (@nom)";
-            string requeteIdLast = "select @@IDENTITY";
-
-            SqlCommand addEmploye = new SqlCommand(requeteEmploye, connexion);
-            SqlCommand getId = new SqlCommand(requeteIdLast, connexion);
-
-            addEmploye.CommandType = CommandType.Text;
-            addEmploye.Parameters.AddWithValue("@nom", employe.Nom);
-
-            connexion.Open();
-            addEmploye.ExecuteNonQuery();
-            SqlDataReader dr = getId.ExecuteReader();
-            dr.Read();
-            id_employe = Convert.ToInt32(dr.GetDecimal(0));
-            connexion.Close();
-
-            foreach (var dispo in employe.Disponibilites)
+            if (AutorisationInsertion(employe.Nom))
             {
-                TimeOnly heure_debut = dispo.HeureDebut;
-                TimeOnly heure_fin = dispo.HeureFin;
+                int id_employe;
 
-                string requeteDispo = "insert into Disponibilite values (@heure_debut, @heure_fin, @jour, @id_employe)";
-                SqlCommand addDispos = new SqlCommand(requeteDispo, connexion);
-                addDispos.CommandType = CommandType.Text;
+                string requeteEmploye = "insert into Employe values (@nom)";
+                string requeteIdLast = "select @@IDENTITY";
 
-                addDispos.Parameters.AddWithValue("@heure_debut", heure_debut.ToTimeSpan());
-                addDispos.Parameters.AddWithValue("@heure_fin", heure_fin.ToTimeSpan());
-                addDispos.Parameters.AddWithValue("@jour", dispo.Jour);
-                addDispos.Parameters.AddWithValue("@id_employe", id_employe);
+                SqlCommand addEmploye = new SqlCommand(requeteEmploye, connexion);
+                SqlCommand getId = new SqlCommand(requeteIdLast, connexion);
+
+                addEmploye.CommandType = CommandType.Text;
+                addEmploye.Parameters.AddWithValue("@nom", employe.Nom);
 
                 connexion.Open();
-                addDispos.ExecuteNonQuery();
+                addEmploye.ExecuteNonQuery();
+                SqlDataReader dr = getId.ExecuteReader();
+                dr.Read();
+                id_employe = Convert.ToInt32(dr.GetDecimal(0));
                 connexion.Close();
-            }
 
-            return id_employe;
+                foreach (var dispo in employe.Disponibilites)
+                {
+                    TimeOnly heure_debut = dispo.HeureDebut;
+                    TimeOnly heure_fin = dispo.HeureFin;
+
+                    string requeteDispo = "insert into Disponibilite values (@heure_debut, @heure_fin, @jour, @id_employe)";
+                    SqlCommand addDispos = new SqlCommand(requeteDispo, connexion);
+                    addDispos.CommandType = CommandType.Text;
+
+                    addDispos.Parameters.AddWithValue("@heure_debut", heure_debut.ToTimeSpan());
+                    addDispos.Parameters.AddWithValue("@heure_fin", heure_fin.ToTimeSpan());
+                    addDispos.Parameters.AddWithValue("@jour", dispo.Jour);
+                    addDispos.Parameters.AddWithValue("@id_employe", id_employe);
+
+                    connexion.Open();
+                    addDispos.ExecuteNonQuery();
+                    connexion.Close();
+                }
+
+                return id_employe;
+            }
+            else return -1;
+
+            
         }
         /// <summary>
         /// permet l'Autorisation d'entrer un utilisateur 
@@ -197,7 +203,7 @@ namespace Analyse
             foreach (var emp in Employes)
             {
                 if (emp.ComparerEmploye(nom))
-                {                    
+                {
                     autorisation = false;
                     break;
                 }
@@ -353,6 +359,12 @@ namespace Analyse
             recherche.Show();
         }
 
+        /// <summary>
+        /// verfie si 2 datatable sont identiques
+        /// </summary>
+        /// <param name="tbl1"></param>
+        /// <param name="tbl2"></param>
+        /// <returns></returns>
         public static bool AreTablesTheSame(DataTable tbl1, DataTable tbl2)
         {
             if (tbl1.Rows.Count != tbl2.Rows.Count || tbl1.Columns.Count != tbl2.Columns.Count)

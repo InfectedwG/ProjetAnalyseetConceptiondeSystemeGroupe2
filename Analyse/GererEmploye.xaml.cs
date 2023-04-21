@@ -104,7 +104,7 @@ namespace Analyse
                 MainWindow.Employes.Add(employe);
                 MessageBox.Show("Ajout fait avec succes!", "Attention");
             }
-            else MessageBox.Show("L'employer existant!", "Attention");
+            else MessageBox.Show("Employe deja existant!", "Attention");
 
 
 

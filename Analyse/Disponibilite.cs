@@ -41,7 +41,9 @@ namespace Analyse
             get { return jour; }
             set { jour = value; }
         }
-
+        /// <summary>
+        /// constructeur de disponibilite de base
+        /// </summary>
         public Disponibilite()
         {
             HeureDebut = new TimeOnly();
@@ -76,11 +78,22 @@ namespace Analyse
             if (dureeDispo >= dureeCheck && this.Jour == jour) return true;
             else return false;
         }
+
+        /// <summary>
+        /// verifie si 2 dispos ont une periode de overlap
+        /// </summary>
+        /// <param name="dispo"></param>
+        /// <returns></returns>
         public bool VerifOverlap(Disponibilite dispo)
         {
             return this.HeureDebut <= dispo.HeureFin && dispo.HeureDebut <= this.HeureFin && this.Jour == dispo.Jour;
         }
 
+        /// <summary>
+        /// creer une dispo qui represente l'overlap de 2 dispos
+        /// </summary>
+        /// <param name="dispo"></param>
+        /// <returns></returns>
         public Disponibilite GetOverlap(Disponibilite dispo)
         {
             Disponibilite resultat = new Disponibilite();

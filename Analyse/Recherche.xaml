@@ -105,12 +105,6 @@
                 Margin="10,4,0,0" VerticalAlignment="Center" Width="108" 
                 Height="31" Click="BtnRetour_Click" Grid.RowSpan="2"/>
 
-        <Button x:Name="btnclear"
-                Content="Clear"
-                Grid.Row="5"
-                Grid.Column="2"
-                Width="100" Click="btnclear_Click"/>
-
         <Label Content="Affichage des disponibilités" HorizontalAlignment="Center"  
                VerticalAlignment="Top" Width="400" Height="26" FontFamily="Arial Black" 
                FontWeight="Bold" Grid.Column="1" FontSize="11" Grid.Row="6" Margin="0,18,0,0"
